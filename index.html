@@ -247,6 +247,37 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary-dark);
+        }
+
         .how-to-btn {
             background: white;
             color: var(--primary-dark) !important;
@@ -1290,14 +1321,19 @@
                         </div>
                     </div>
                     <div class="user-info">
+                        <!-- Language Switcher -->
+                        <div class="lang-switcher" id="lang-switcher">
+                            <button class="lang-btn active" data-lang="ua">UA</button>
+                            <button class="lang-btn" data-lang="ru">RU</button>
+                        </div>
                         <a href="https://youtu.be/40xtU79JbDA" target="_blank" class="how-to-btn" title="Як проходити навчання">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
-                            <span>Як навчатись</span>
+                            <span id="how-to-text">Як навчатись</span>
                         </a>
                         <span id="user-email" class="user-email"></span>
                         <button id="logout-btn" class="logout-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-                            <span>Вихід</span>
+                            <span id="logout-text">Вихід</span>
                         </button>
                     </div>
                 </div>
@@ -1429,9 +1465,10 @@
         let currentUser = null;
         let userProgress = {};
         let isDataLoaded = false;
+        let currentLang = localStorage.getItem('talko-lang') || 'ua';
 
-        // Language data (тільки українська)
-        const translations = {
+        // Language data
+        const translationsUA = {
             loginTitle: 'Архітектура Бізнесу',
             loginSubtitle: 'Увійдіть до вашого акаунта',
             emailLabel: 'Email',
@@ -1439,6 +1476,7 @@
             loginBtn: 'Увійти',
             loginBtnLoading: 'Увійти...',
             logoutBtn: 'Вихід',
+            howToLearn: 'Як навчатись',
             headerTitle: 'Архітектура Бізнесу',
             welcomeSubtitle: 'Talko Management System • 15 модулів • 280 хвилин',
             progressLabel: 'Прогрес курсу',
@@ -1449,12 +1487,13 @@
             aiTab: 'AI-Асистенти',
             backBtn: '← Назад до модулів',
             resultTitle: 'РЕЗУЛЬТАТ РОБОТИ:',
-            homeworkPlaceholder: '[Поле для вставки тексту]',
+            homeworkPlaceholder: 'Вставте посилання на Google Документ...',
             homeworkStatusEmpty: 'Заповніть поле для завершення уроку',
             homeworkStatusReady: 'Готово до завершення',
             homeworkStatusCompleted: 'Завдання виконано',
             submitBtn: 'Завершити урок',
             submitBtnCompleted: 'Завершено',
+            cancelBtn: 'Скасувати',
             moduleStatusAvailable: 'Доступний',
             moduleStatusCompleted: 'Завершено',
             openLessonBtn: 'Відкрити урок',
@@ -1465,11 +1504,57 @@
             watchVideo: 'Дивитись відео',
             downloadMaterials: 'Завантажити матеріали',
             goToAssistant: 'Перейти до асистента',
+            support: 'Підтримка',
             errorWrongPassword: 'Неправильний email або пароль.',
             errorInvalidEmail: 'Неправильний формат email.',
             errorTooManyRequests: 'Забагато спроб входу. Спробуйте пізніше.',
             errorGeneral: 'Помилка входу. Спробуйте ще раз.'
         };
+
+        const translationsRU = {
+            loginTitle: 'Архитектура Бизнеса',
+            loginSubtitle: 'Войдите в ваш аккаунт',
+            emailLabel: 'Email',
+            passwordLabel: 'Пароль',
+            loginBtn: 'Войти',
+            loginBtnLoading: 'Вход...',
+            logoutBtn: 'Выход',
+            howToLearn: 'Как учиться',
+            headerTitle: 'Архитектура Бизнеса',
+            welcomeSubtitle: 'Talko Management System • 15 модулей • 280 минут',
+            progressLabel: 'Прогресс курса',
+            completedLabel: 'Завершённых модулей',
+            timeLabel: 'Времени обучения (мин)',
+            progressTextLabel: 'Прогресс',
+            modulesTab: 'Модули',
+            aiTab: 'AI-Ассистенты',
+            backBtn: '← Назад к модулям',
+            resultTitle: 'РЕЗУЛЬТАТ РАБОТЫ:',
+            homeworkPlaceholder: 'Вставьте ссылку на Google Документ...',
+            homeworkStatusEmpty: 'Заполните поле для завершения урока',
+            homeworkStatusReady: 'Готово к завершению',
+            homeworkStatusCompleted: 'Задание выполнено',
+            submitBtn: 'Завершить урок',
+            submitBtnCompleted: 'Завершено',
+            cancelBtn: 'Отменить',
+            moduleStatusAvailable: 'Доступен',
+            moduleStatusCompleted: 'Завершено',
+            openLessonBtn: 'Открыть урок',
+            timeText: 'Время:',
+            lossesText: 'Потери:',
+            savingText: 'Сохранение...',
+            lessonCompletedAlert: 'Урок успешно завершён!',
+            watchVideo: 'Смотреть видео',
+            downloadMaterials: 'Скачать материалы',
+            goToAssistant: 'Перейти к ассистенту',
+            support: 'Поддержка',
+            errorWrongPassword: 'Неправильный email или пароль.',
+            errorInvalidEmail: 'Неправильный формат email.',
+            errorTooManyRequests: 'Слишком много попыток входа. Попробуйте позже.',
+            errorGeneral: 'Ошибка входа. Попробуйте ещё раз.'
+        };
+
+        let translations = currentLang === 'ua' ? translationsUA : translationsRU;
 
         // Course data - тільки українські модулі
         const courseData = [
@@ -1835,41 +1920,77 @@
                 materialsLink: null,
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Що це:</h3>
-    <p style="color: #374151; line-height: 1.7;"><strong>Компас</strong> — це інструмент, який допомагає подивитися на будь-яку проблему або ситуацію з різних сторін, а не лише через інтуїцію чи емоції. Він тренує мислення власника як аналітика — не просто "вирішувати", а <strong>приймати зважені рішення</strong>.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Що це</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Компас</strong> — це інструмент, який допомагає подивитися на будь-яку проблему або ситуацію з різних сторін, а не лише через інтуїцію чи емоції.</p>
+        <p style="margin-top: 12px;">Він тренує мислення власника як аналітика — не просто "вирішувати", а <strong>приймати зважені рішення</strong>.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Ваше завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li><strong>Зайдіть в AI-компас.</strong></li>
-        <li>Опишіть одну <strong>реальну проблему або ситуацію</strong> (наприклад: "падають продажі", "не вистачає адміністраторів", "застрягли в рішенні, як розширювати клініку").</li>
-        <li>Дайте асистенту провести аналіз.</li>
-        <li>Коли він запропонує варіанти рішень — <strong>попросіть зробити сценарне планування</strong>:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>Плюси та мінуси кожного варіанту.</li>
-                <li>Що буде, якщо цей варіант реалізувати / не реалізувати.</li>
-            </ul>
-        </li>
-    </ol>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">Ваше завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li><strong>Зайдіть в AI-компас</strong></li>
+            <li>Опишіть одну <strong>реальну проблему або ситуацію</strong> (наприклад: "падають продажі", "не вистачає адміністраторів", "застрягли в рішенні, як розширювати клініку")</li>
+            <li>Дайте асистенту провести аналіз</li>
+            <li>Коли він запропонує варіанти рішень — <strong>попросіть зробити сценарне планування</strong>:
+                <ul style="margin-top: 8px;">
+                    <li>Плюси та мінуси кожного варіанту</li>
+                    <li>Що буде, якщо цей варіант реалізувати / не реалізувати</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">✓ Для чого:</h3>
-    <p style="color: #374151; line-height: 1.7;">Щоб ви могли бачити ситуацію <strong>з різних ракурсів</strong> — стратегічно, аналітично й системно. Це зменшує емоційні рішення і підвищує точність управління.</p>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Для чого</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Щоб ви могли бачити ситуацію <strong>з різних ракурсів</strong> — стратегічно, аналітично й системно. Це зменшує емоційні рішення і підвищує точність управління.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">→ Результат:</h3>
-    <p style="color: #374151; line-height: 1.7;">Ви тестуєте інструмент і додаєте його <strong>в свою "обойму" управлінських рішень</strong>, щоб у майбутньому швидко оцінювати будь-яку ситуацію через аналітичну рамку.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ви тестуєте інструмент і додаєте його <strong>в свою "обойму" управлінських рішень</strong>, щоб у майбутньому швидко оцінювати будь-яку ситуацію через аналітичну рамку.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <p style="color: #374151; line-height: 1.7; margin-bottom: 0.5rem;">Пройдіть діалог з AI-компасом і випишіть 1-2 інсайти, які змінили ваше бачення ситуації.</p>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Пройдіть діалог з AI-компасом і випишіть 1-2 інсайти, які змінили ваше бачення ситуації.</p>
+    </div>
 </div>
                 `,
                 
@@ -1886,36 +2007,72 @@
                 materialsLink: null,
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Що це:</h3>
-    <p style="color: #374151; line-height: 1.7;"><strong>Технічний провідник</strong> — це AI-інструмент, який допомагає покроково налаштовувати будь-яку систему: CRM, таблицю, бот чи інструмент управління. Ви просто описуєте, <strong>що хочете отримати в результаті</strong>, і він проведе вас через усі кроки.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Що це</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Технічний провідник</strong> — це AI-інструмент, який допомагає покроково налаштовувати будь-яку систему: CRM, таблицю, бот чи інструмент управління.</p>
+        <p style="margin-top: 12px;">Ви просто описуєте, <strong>що хочете отримати в результаті</strong>, і він проведе вас через усі кроки.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Ваше завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Зайдіть у <strong>Технічного провідника.</strong></li>
-        <li>Вкажіть мету (наприклад: "налаштувати CRM для продажів" або "створити дашборд у Google Sheets").</li>
-        <li>Якщо потрібно — <strong>додайте скрін</strong>, і провідник покаже, куди натискати або що виправити.</li>
-        <li>Пройдіть покрокову інструкцію до готового результату.</li>
-    </ol>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">Ваше завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Зайдіть у <strong>Технічного провідника</strong></li>
+            <li>Вкажіть мету (наприклад: "налаштувати CRM для продажів" або "створити дашборд у Google Sheets")</li>
+            <li>Якщо потрібно — <strong>додайте скрін</strong>, і провідник покаже, куди натискати або що виправити</li>
+            <li>Пройдіть покрокову інструкцію до готового результату</li>
+        </ol>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">✓ Для чого:</h3>
-    <p style="color: #374151; line-height: 1.7;">Щоб будь-яке технічне налаштування проходило <strong>без плутанини, пошуку в Google і звернень до фахівців</strong> — все під контролем системи.</p>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Для чого</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Щоб будь-яке технічне налаштування проходило <strong>без плутанини, пошуку в Google і звернень до фахівців</strong> — все під контролем системи.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">→ Результат:</h3>
-    <p style="color: #374151; line-height: 1.7;">Ви протестували інструмент і маєте <strong>особистого технічного асистента</strong>, який допомагає реалізувати будь-яку ідею до робочого результату.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ви протестували інструмент і маєте <strong>особистого технічного асистента</strong>, який допомагає реалізувати будь-яку ідею до робочого результату.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <p style="color: #374151; line-height: 1.7;">Оберіть одну технічну задачу (налаштування CRM, створення таблиці, налаштування автоматизації) і пройдіть покрокову інструкцію з Технічним провідником до готового результату.</p>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Оберіть одну технічну задачу (налаштування CRM, створення таблиці, налаштування автоматизації) і пройдіть покрокову інструкцію з Технічним провідником до готового результату.</p>
+    </div>
 </div>
                 `,
                 
@@ -2038,192 +2195,590 @@
             {
                 id: 8,
                 title: "ЦІЛЬ І ЗАДУМ",
+                title_ru: "ЦЕЛЬ И ЗАМЫСЕЛ",
                 subtitle: "Як проходити урок: переглянути відео",
+                subtitle_ru: "Как проходить урок: посмотреть видео",
                 
                 videoLink: "https://youtu.be/U08SPt1d96c",
                 materialsLink: "https://drive.google.com/drive/folders/1c--GPEXkBsH99Pt07LP5nGUed3Br0tid?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Суть завдання</h3>
-    <p style="color: #374151; line-height: 1.7;">Вам потрібно пройти діалог із <strong>AI-коучем цілей</strong>, щоб:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>сформувати <strong>Ціль, Задум, Ідеальну картину та Історію бізнесу</strong>;</li>
-        <li>на виході отримати <strong>Політику розвитку організації</strong> — документ, який:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>визначає зміст і напрям компанії;</li>
-                <li>дає сенс щоденним діям кожного співробітника та керівника.</li>
-            </ul>
-        </li>
-    </ul>
-    <p style="color: #374151; line-height: 1.7; margin-top: 0.75rem;">Ця політика стане <strong>фундаментом системного управління</strong> і основою для подальшої роботи з командою.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Суть завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Вам потрібно пройти діалог із <strong>AI-коучем цілей</strong>, щоб:</p>
+        <ul>
+            <li>сформувати <strong>Ціль, Задум, Ідеальну картину та Історію бізнесу</strong></li>
+            <li>на виході отримати <strong>Політику розвитку організації</strong> — документ, який визначає зміст і напрям компанії та дає сенс щоденним діям кожного співробітника</li>
+        </ul>
+        <p style="margin-top: 12px;">Ця політика стане <strong>фундаментом системного управління</strong> і основою для подальшої роботи з командою.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Наступний етап</h3>
-    <p style="color: #374151; line-height: 1.7;">Після проходження діалогу потрібно:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>оптимізувати презентацію і тези за підсумками роботи;</li>
-        <li>підготувати коротку презентацію для команди — це є частиною технології впровадження.</li>
-    </ul>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">Наступний етап</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Після проходження діалогу потрібно:</p>
+        <ul>
+            <li>оптимізувати презентацію і тези за підсумками роботи</li>
+            <li>підготувати коротку презентацію для команди — це є частиною технології впровадження</li>
+        </ul>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Суть задания</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Вам нужно пройти диалог с <strong>AI-коучем целей</strong>, чтобы:</p>
+        <ul>
+            <li>сформировать <strong>Цель, Замысел, Идеальную картину и Историю бизнеса</strong></li>
+            <li>на выходе получить <strong>Политику развития организации</strong> — документ, который определяет содержание и направление компании</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Пройдите AI-ассистента</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ассистент проведёт вас через формулировку целей и создаст черновик политики.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Адаптируйте материалы</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Используйте материалы из папки (презентация, тезисы, опросник) и адаптируйте под свой бизнес:</p>
+        <div style="margin-top: 12px;">
+            <a href="https://drive.google.com/drive/folders/1c--GPEXkBsH99Pt07LP5nGUed3Br0tid?usp=sharing" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Папка с материалами
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Проведите презентацию</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Представьте политику целей команде. Это важная часть технологии внедрения.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть діалог із AI-коучем цілей</li>
-        <li>Створіть у Google Docs документ:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>назва: <strong>Політика цілей і задуму компанії</strong></li>
-                <li>вставте сформовані тези (ціль, задум, ідеальна картина, історія бізнесу)</li>
-            </ul>
-        </li>
-        <li>Прикріпіть посилання на документ у поле завдання</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть діалог із AI-коучем цілей</li>
+            <li>Створіть у Google Docs документ: <strong>Політика цілей і задуму компанії</strong></li>
+            <li>Вставте сформовані тези (ціль, задум, ідеальна картина, історія бізнесу)</li>
+            <li>Прикріпіть посилання на документ</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдите диалог с AI-коучем целей</li>
+            <li>Создайте политику целей в Google Docs</li>
+            <li>Адаптируйте презентацию и тезисы из папки материалов</li>
+            <li>Проведите презентацию для команды</li>
+            <li>Прикрепите ссылку на документ</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
                 homeworkLink: "https://chatgpt.com/g/g-6850f64368a08191b2c1e8cb233b7ebb-ai-kouch-konsultant-alex-talko-tochka-b",
                 homeworkLinkName: "→ AI-коуч цілей",
+                homeworkLinkName_ru: "→ AI-коуч целей",
                 time: 15
             },
             {
                 id: 9,
                 title: "ПРОДУКТ ОРГАНІЗАЦІЇ",
+                title_ru: "ПРОДУКТ ОРГАНИЗАЦИИ",
                 subtitle: "Як проходити урок: переглянути відео",
+                subtitle_ru: "Как проходить урок: посмотреть видео",
                 
                 videoLink: "https://youtu.be/0xPP0lhSTFE",
                 materialsLink: "https://drive.google.com/drive/folders/1Ct2GBeRfXxxrzg0oJ8TjxaUQ1N12rcKD?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Завдання</h3>
-    <p style="color: #374151; line-height: 1.7;">Через діалог з <strong>AI-коучем продукту</strong> визначте:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li><strong>головний продукт компанії</strong> — який цінний результат ви створюєте для клієнта;</li>
-        <li><strong>продукти ролей</strong>, необхідні для створення цього результату (адмін, маркетолог, менеджер, лікар тощо);</li>
-        <li>як продукти ролей пов'язані між собою та з цілями організації.</li>
-    </ul>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Через діалог з <strong>AI-коучем продукту</strong> визначте:</p>
+        <ul>
+            <li><strong>головний продукт компанії</strong> — який цінний результат ви створюєте для клієнта</li>
+            <li><strong>продукти ролей</strong>, необхідні для створення цього результату</li>
+            <li>як продукти ролей пов'язані між собою та з цілями організації</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Результат</h3>
-    <p style="color: #374151; line-height: 1.7;">На виході — <strong>Політика продукту організації</strong>, що описує:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>головний продукт компанії;</li>
-        <li>продукти ключових ролей;</li>
-        <li>як кожен продукт впливає на спільний результат.</li>
-    </ul>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>На виході — <strong>Політика продукту організації</strong>, що описує:</p>
+        <ul>
+            <li>головний продукт компанії</li>
+            <li>продукти ключових ролей</li>
+            <li>як кожен продукт впливає на спільний результат</li>
+        </ul>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Через диалог с <strong>AI-коучем продукта</strong> определите главный продукт компании и продукты ключевых ролей.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Пройдите AI-ассистента</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ассистент поможет сформулировать продукт компании и продукты ролей.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Адаптируйте материалы</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Используйте материалы из папки и адаптируйте под свой бизнес:</p>
+        <div style="margin-top: 12px;">
+            <a href="https://drive.google.com/drive/folders/1Ct2GBeRfXxxrzg0oJ8TjxaUQ1N12rcKD?usp=sharing" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Папка с материалами
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Проведите презентацию</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Представьте политику продукта команде.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть діалог із AI-коучем продукту</li>
-        <li>Створіть документ «Політика продукту організації» у Google Docs</li>
-        <li>Внесіть результати діалогу й прикріпіть посилання на документ</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть діалог із AI-коучем продукту</li>
+            <li>Створіть документ «Політика продукту організації» у Google Docs</li>
+            <li>Внесіть результати діалогу й прикріпіть посилання на документ</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдите диалог с AI-коучем продукта</li>
+            <li>Создайте политику продукта в Google Docs</li>
+            <li>Адаптируйте материалы из папки</li>
+            <li>Проведите презентацию для команды</li>
+            <li>Прикрепите ссылку на документ</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
                 homeworkLink: "https://chatgpt.com/g/g-6851a1db22ac81918521e73ffdd1d6e2-ai-kouch-konsultant-alex-talko-produkt-tskp",
                 homeworkLinkName: "→ AI-коуч продукту",
+                homeworkLinkName_ru: "→ AI-коуч продукта",
                 time: 30
             },
             {
                 id: 10,
                 title: "ФУНКЦІОНАЛЬНА СТРУКТУРА ТА РОЛІ",
+                title_ru: "ФУНКЦИОНАЛЬНАЯ СТРУКТУРА И РОЛИ",
                 subtitle: "Як проходити урок: переглянути відео",
+                subtitle_ru: "Как проходить урок: посмотреть видео",
                 
                 videoLink: "https://youtu.be/zFNsHtbRoVs",
                 materialsLink: "https://drive.google.com/drive/folders/1difvS_l0v_1RaOqte4zIvmdxR4jf-zEM?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Завдання</h3>
-    <p style="color: #374151; line-height: 1.7;">Через діалог з <strong>AI-коучем структури</strong> визначте:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li><strong>ключові функції організації</strong> (маркетинг, продажі, фінанси, адміністрування тощо);</li>
-        <li>які ролі відповідають за виконання цих функцій;</li>
-        <li>принцип: ми будуємо систему навколо функцій, а не людей.</li>
-    </ul>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Через діалог з <strong>AI-коучем структури</strong> визначте:</p>
+        <ul>
+            <li><strong>ключові функції організації</strong> (маркетинг, продажі, фінанси, адміністрування)</li>
+            <li>які ролі відповідають за виконання цих функцій</li>
+            <li>принцип: ми будуємо систему навколо функцій, а не людей</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Результат</h3>
-    <p style="color: #374151; line-height: 1.7;">На виході — <strong>Політика функціональної структури</strong>, що описує:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>основні функції компанії;</li>
-        <li>ролі, відповідальні за них;</li>
-        <li>логіку взаємодії між зонами;</li>
-        <li>підготовлений регламент функцій.</li>
-    </ul>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>На виході — <strong>Політика функціональної структури</strong>, що описує:</p>
+        <ul>
+            <li>основні функції компанії</li>
+            <li>ролі, відповідальні за них</li>
+            <li>логіку взаємодії між зонами</li>
+            <li>підготовлений регламент функцій</li>
+        </ul>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Определите ключевые функции организации и роли через <strong>AI-коуча структуры</strong>.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Пройдите AI-ассистента</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ассистент поможет определить функции и роли вашей организации.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Адаптируйте материалы</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Используйте материалы из папки:</p>
+        <div style="margin-top: 12px;">
+            <a href="https://drive.google.com/drive/folders/1difvS_l0v_1RaOqte4zIvmdxR4jf-zEM?usp=sharing" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Папка с материалами
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Проведите презентацию</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Представьте структуру и роли команде.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть діалог із AI-коучем структури</li>
-        <li>Створіть документ «Політика функціональної структури» у Google Docs</li>
-        <li>Внесіть результати діалогу (функції, ролі, регламент) і прикріпіть посилання на документ</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть діалог із AI-коучем структури</li>
+            <li>Створіть документ «Політика функціональної структури» у Google Docs</li>
+            <li>Внесіть результати діалогу (функції, ролі, регламент) і прикріпіть посилання</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдите диалог с AI-коучем структуры</li>
+            <li>Создайте политику структуры в Google Docs</li>
+            <li>Адаптируйте материалы из папки</li>
+            <li>Проведите презентацию для команды</li>
+            <li>Прикрепите ссылку на документ</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
                 homeworkLink: "https://chatgpt.com/g/g-68584f3314848191b812f6c0abaaae9e-ai-kouch-konsultant-alex-talko-orgstruktura",
                 homeworkLinkName: "→ AI-коуч структури",
+                homeworkLinkName_ru: "→ AI-коуч структуры",
                 time: 90
             },
             {
                 id: 11,
                 title: "СИСТЕМА СТАТИСТИК",
+                title_ru: "СИСТЕМА СТАТИСТИК",
                 subtitle: "Як проходити урок: переглянути відео",
+                subtitle_ru: "Как проходить урок: посмотреть видео",
                 
                 videoLink: "https://youtu.be/wpuey2Ivui0",
                 materialsLink: "https://drive.google.com/drive/folders/1fMZmQCXqGjfNEZoF34GD9Okqz1aMVrpF?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Завдання</h3>
-    <p style="color: #374151; line-height: 1.7;">Через діалог з <strong>AI-коучем статистик</strong> потрібно:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>визначити ключові статистики для кожної функції організації;</li>
-        <li>сформувати логіку, як ці показники відображають результат, а не процес;</li>
-        <li>створити Google-таблицю для щотижневого збору статистик.</li>
-    </ul>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Через діалог з <strong>AI-коучем статистик</strong> потрібно:</p>
+        <ul>
+            <li>визначити ключові статистики для кожної функції організації</li>
+            <li>сформувати логіку, як ці показники відображають результат, а не процес</li>
+            <li>створити Google-таблицю для щотижневого збору статистик</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Результат</h3>
-    <p style="color: #374151; line-height: 1.7;">На виході — <strong>Політика системи статистик</strong>, що містить:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>перелік головних статистик по функціях;</li>
-        <li>форму для фіксації показників у Google-таблиці;</li>
-        <li>зв'язок кожної статистики з функцією та роллю на структурі.</li>
-    </ul>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>На виході — <strong>Політика системи статистик</strong>, що містить:</p>
+        <ul>
+            <li>перелік головних статистик по функціях</li>
+            <li>форму для фіксації показників у Google-таблиці</li>
+            <li>зв'язок кожної статистики з функцією та роллю на структурі</li>
+        </ul>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Определите ключевые статистики для каждой функции организации через <strong>AI-ассистента</strong>.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Пройдите AI-ассистента статистик</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ассистент поможет определить ключевые показатели для вашего бизнеса.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Внесите данные в систему</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Перейдите в систему статистик и внесите ваши показатели:</p>
+        <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://alextalko.com/kpi" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                Система статистик KPI
+            </a>
+            <a href="https://chatgpt.com/g/g-693bf67a13e48191940632f9d6bedb63-talko-statistics-ai-support" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+                AI-поддержка платформы
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Настройте отслеживание</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Привяжите статистики к функциям и ролям в системе.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть діалог із AI-коучем статистик</li>
-        <li>Створіть документ «Політика системи статистик» у Google Docs</li>
-        <li>Створіть Google-таблицю зі статистиками та прив'яжіть її до кожної функції</li>
-        <li>Прикріпіть посилання на документ і таблицю</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть діалог із AI-коучем статистик</li>
+            <li>Створіть документ «Політика системи статистик» у Google Docs</li>
+            <li>Створіть Google-таблицю зі статистиками та прив'яжіть її до кожної функції</li>
+            <li>Прикріпіть посилання на документ і таблицю</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдите AI-ассистента статистик</li>
+            <li>Внесите данные в систему <a href="https://alextalko.com/kpi" target="_blank" style="color: var(--primary);">alextalko.com/kpi</a></li>
+            <li>Привяжите статистики к функциям и ролям</li>
+            <li>Прикрепите ссылку на настроенную систему</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
                 homeworkLink: "https://chatgpt.com/g/g-6851a70e282481918ad5c2894ff30b13-ai-kouch-konsultant-alex-talko-statistiki",
                 homeworkLinkName: "→ AI-коуч статистик",
+                homeworkLinkName_ru: "→ AI-коуч статистик",
                 time: 15
             },
             {
@@ -2569,6 +3124,56 @@
             }
         });
 
+        // Language switcher handler
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if (lang === currentLang) return;
+                
+                currentLang = lang;
+                localStorage.setItem('talko-lang', lang);
+                translations = lang === 'ua' ? translationsUA : translationsRU;
+                
+                // Update active button
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update UI
+                updateUILanguage();
+                renderModules();
+            });
+        });
+
+        // Set initial active language button
+        document.querySelector(`.lang-btn[data-lang="${currentLang}"]`)?.classList.add('active');
+        document.querySelector(`.lang-btn[data-lang="${currentLang === 'ua' ? 'ru' : 'ua'}"]`)?.classList.remove('active');
+
+        function updateUILanguage() {
+            const t = translations;
+            
+            // Header
+            document.getElementById('header-title').textContent = t.headerTitle;
+            document.getElementById('welcome-subtitle').textContent = t.welcomeSubtitle;
+            document.getElementById('how-to-text').textContent = t.howToLearn;
+            document.getElementById('logout-text').textContent = t.logoutBtn;
+            
+            // Stats
+            document.getElementById('progress-label').textContent = t.progressTextLabel;
+            document.getElementById('completed-label').textContent = t.completedLabel;
+            document.getElementById('time-label').textContent = t.timeLabel;
+            
+            // Tabs
+            document.querySelector('#modules-tab span').textContent = t.modulesTab;
+            document.querySelector('#ai-tab span').textContent = t.aiTab;
+            document.querySelector('.support-btn span').textContent = t.support;
+            
+            // Back button
+            document.querySelector('#back-btn span').textContent = t.backBtn.replace('← ', '');
+            
+            // Homework textarea placeholder
+            document.getElementById('homework-textarea').placeholder = t.homeworkPlaceholder;
+        }
+
         // Load user progress from Firestore
         async function loadUserProgress() {
             if (!currentUser) return;
@@ -2696,23 +3301,32 @@
         function renderModules() {
             const modulesList = document.getElementById('modules-list');
             const t = translations;
+            const isRu = currentLang === 'ru';
+            const minText = isRu ? 'мин' : 'хв';
             modulesList.innerHTML = '';
 
             courseData.forEach(module => {
                 const moduleCard = document.createElement('div');
                 moduleCard.className = 'module-card';
                 
+                // Get localized title and subtitle
+                const title = isRu && module.title_ru ? module.title_ru : module.title;
+                const subtitle = isRu && module.subtitle_ru ? module.subtitle_ru : module.subtitle;
+                
                 moduleCard.innerHTML = `
                     <div class="module-content">
                         <div class="module-left">
                             <div class="module-icon ${module.completed ? 'completed' : 'available'}">
-                                ${module.completed ? '✓' : module.id}
+                                ${module.completed ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : module.id}
                             </div>
                             <div class="module-info">
-                                <h3 class="module-title">${module.id}. ${module.title}</h3>
-                                <p class="module-subtitle">${module.subtitle}</p>
+                                <h3 class="module-title">${module.id}. ${title}</h3>
+                                <p class="module-subtitle">${subtitle}</p>
                                 <div class="module-meta">
-                                    <span class="module-time">${t.timeText} ${module.time} хв</span>
+                                    <span class="module-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                        ${t.timeText} ${module.time} ${minText}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -2750,25 +3364,35 @@
         window.openModule = function(moduleId) {
             const module = courseData.find(m => m.id === moduleId);
             const t = translations;
+            const isRu = currentLang === 'ru';
             if (!module) return;
 
             currentModule = module;
             
-            document.getElementById('lesson-title').textContent = `УРОК ${module.id}: ${module.title}`;
+            // Get localized content
+            const title = isRu && module.title_ru ? module.title_ru : module.title;
+            const lessonContentText = isRu && module.lessonContent_ru ? module.lessonContent_ru : module.lessonContent;
+            const homeworkText = isRu && module.homework_ru ? module.homework_ru : module.homework;
+            const homeworkLinkName = isRu && module.homeworkLinkName_ru ? module.homeworkLinkName_ru : module.homeworkLinkName;
+            
+            const lessonLabel = isRu ? 'УРОК' : 'УРОК';
+            document.getElementById('lesson-title').textContent = `${lessonLabel} ${module.id}: ${title}`;
             
             // Update lesson badge
             const lessonBadge = document.getElementById('lesson-badge');
+            const completedText = isRu ? 'Завершено' : 'Завершено';
+            const minText = isRu ? 'мин' : 'хв';
             if (module.completed) {
                 lessonBadge.classList.add('completed');
-                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Завершено</span>`;
+                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>${completedText}</span>`;
             } else {
                 lessonBadge.classList.remove('completed');
-                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${module.time} хв</span>`;
+                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${module.time} ${minText}</span>`;
             }
             
-            // Приховати блок результату для модулів з lessonContent (нові уроки 1-3, 8-15)
+            // Hide result block for modules with lessonContent
             const resultBlock = document.getElementById('lesson-result');
-            if (module.lessonContent) {
+            if (lessonContentText) {
                 resultBlock.classList.add('hidden');
             } else {
                 resultBlock.classList.remove('hidden');
@@ -2777,7 +3401,7 @@
             
             document.getElementById('homework-textarea').value = module.homeworkText || '';
             
-            // Для уроку 14 приховати весь блок домашнього завдання
+            // For lesson 14 hide homework section
             const homeworkSection = document.querySelector('.homework-section');
             if (module.id === 14) {
                 homeworkSection.style.display = 'none';
@@ -2789,28 +3413,36 @@
             
             const lessonContent = document.getElementById('lesson-content');
             
+            // For RU version of lessons 8-11: hide video link if no video for RU
+            const showVideo = !isRu || (isRu && module.id < 8) || (isRu && module.id > 11);
+            
             // NEW FORMAT - with videoLink and lessonContent
-            if (module.lessonContent) {
+            if (lessonContentText) {
                 lessonContent.innerHTML = `
-                    ${module.videoLink ? `
+                    ${showVideo && module.videoLink ? `
                         <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                             <a href="${module.videoLink}" target="_blank" class="homework-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                                 ${t.watchVideo}
                             </a>
-                            ${module.materialsLink ? `
-                                <a href="${module.materialsLink}" target="_blank" class="homework-link">
+                            ${module.materialsLink && !isRu ? `
+                                <a href="${module.materialsLink}" target="_blank" class="homework-link blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                     ${t.downloadMaterials}
                                 </a>
                             ` : ''}
                         </div>
                     ` : ''}
                     
-                    ${module.lessonContent}
+                    ${lessonContentText}
                     
-                    ${module.homework || ''}
+                    ${homeworkText || ''}
                     
-                    <div style="margin-top: 1rem;">
-                        <a href="${module.homeworkLink}" target="_blank" class="homework-link">${module.homeworkLinkName}</a>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="${module.homeworkLink}" target="_blank" class="homework-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+                            ${homeworkLinkName}
+                        </a>
                     </div>
                 `;
             }
