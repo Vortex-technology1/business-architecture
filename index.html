@@ -4603,24 +4603,29 @@
             
             const lessonContent = document.getElementById('lesson-content');
             
-            // For RU version of lessons 8-11: hide video link if no video for RU
-            const showVideo = !isRu; // Відео тільки українською, для RU тільки текстові інструкції
-            
             // NEW FORMAT - with videoLink and lessonContent
             if (lessonContentText) {
                 lessonContent.innerHTML = `
-                    ${showVideo && module.videoLink ? `
+                    ${!isRu && module.videoLink ? `
                         <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                             <a href="${module.videoLink}" target="_blank" class="homework-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                                 ${t.watchVideo}
                             </a>
-                            ${module.materialsLink && !isRu ? `
+                            ${module.materialsLink ? `
                                 <a href="${module.materialsLink}" target="_blank" class="homework-link blue">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                     ${t.downloadMaterials}
                                 </a>
                             ` : ''}
+                        </div>
+                    ` : ''}
+                    ${isRu ? `
+                        <div style="margin-bottom: 1.5rem; padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e;">
+                            <p style="margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                <span><strong>Порядок выполнения:</strong> Прочитайте инструкцию ниже → Выполните задание в AI-ассистенте</span>
+                            </p>
                         </div>
                     ` : ''}
                     
