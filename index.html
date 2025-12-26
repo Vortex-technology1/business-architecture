@@ -2267,8 +2267,17 @@
             currentModule = module;
             
             document.getElementById('lesson-title').textContent = `УРОК ${module.id}: ${module.title}`;
-            document.getElementById('lesson-icon').textContent = module.completed ? 'DONE' : 'TIME';
-            document.getElementById('lesson-time').textContent = `${t.timeText} ${module.time} хв`;
+            document.getElementById('lesson-time').textContent = `${module.time} хв`;
+            
+            // Update lesson badge
+            const lessonBadge = document.getElementById('lesson-badge');
+            if (module.completed) {
+                lessonBadge.classList.add('completed');
+                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Завершено</span>`;
+            } else {
+                lessonBadge.classList.remove('completed');
+                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${module.time} хв</span>`;
+            }
             
             // Приховати блок результату для модулів з lessonContent (нові уроки 1-3, 8-15)
             const resultBlock = document.getElementById('lesson-result');
@@ -2425,7 +2434,11 @@
                 debouncedSave();
                 
                 updateHomeworkStatus();
-                document.getElementById('lesson-icon').textContent = 'DONE';
+                
+                // Update badge to completed
+                const lessonBadge = document.getElementById('lesson-badge');
+                lessonBadge.classList.add('completed');
+                lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Завершено</span>`;
                 
                 updateStats();
                 renderModules();
@@ -2444,7 +2457,11 @@
             debouncedSave();
             
             updateHomeworkStatus();
-            document.getElementById('lesson-icon').textContent = 'DONE';
+            
+            // Update badge to completed
+            const lessonBadge = document.getElementById('lesson-badge');
+            lessonBadge.classList.add('completed');
+            lessonBadge.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Завершено</span>`;
             
             updateStats();
             renderModules();
