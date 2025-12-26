@@ -1317,7 +1317,7 @@
                         </div>
                         <div>
                             <h1 id="header-title" style="font-size: 22px; font-weight: 800;">TALKO System</h1>
-                            <p id="welcome-subtitle" style="font-size: 13px; opacity: 0.9;">15 модулів • 280 хвилин</p>
+                            <p id="welcome-subtitle" style="font-size: 13px; opacity: 0.9;">14 модулів • 255 хвилин</p>
                         </div>
                     </div>
                     <div class="user-info">
@@ -1478,7 +1478,7 @@
             logoutBtn: 'Вихід',
             howToLearn: 'Як навчатись',
             headerTitle: 'Архітектура Бізнесу',
-            welcomeSubtitle: 'Talko Management System • 15 модулів • 280 хвилин',
+            welcomeSubtitle: 'Talko Management System • 14 модулів • 255 хвилин',
             progressLabel: 'Прогрес курсу',
             completedLabel: 'Завершених модулів',
             timeLabel: 'Часу навчання (хв)',
@@ -1521,7 +1521,7 @@
             logoutBtn: 'Выход',
             howToLearn: 'Как учиться',
             headerTitle: 'Архитектура Бизнеса',
-            welcomeSubtitle: 'Talko Management System • 15 модулей • 280 минут',
+            welcomeSubtitle: 'Talko Management System • 14 модулей • 255 минут',
             progressLabel: 'Прогресс курса',
             completedLabel: 'Завершённых модулей',
             timeLabel: 'Времени обучения (мин)',
@@ -1652,6 +1652,245 @@
             },
             {
                 id: 2,
+                title: "НАЛАШТУВАННЯ ДОСТУПУ ДО AI",
+                title_ru: "НАСТРОЙКА ДОСТУПА К AI",
+                subtitle: "ChatGPT та Claude AI — ваші робочі інструменти",
+                subtitle_ru: "ChatGPT и Claude AI — ваши рабочие инструменты",
+                
+                videoLink: null,
+                materialsLink: null,
+                
+                lessonContent: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Навіщо цей урок</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Усі AI-асистенти програми працюють на базі <strong>ChatGPT</strong> та <strong>Claude AI</strong>. Щоб проходити уроки, вам потрібен доступ до цих платформ.</p>
+        <p style="margin-top: 12px;">Цей урок допоможе налаштувати акаунти та авторизуватись.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Реєстрація в ChatGPT</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>ChatGPT — основна платформа для AI-асистентів програми.</p>
+        <ol>
+            <li>Перейдіть на <a href="https://chat.openai.com" target="_blank" style="color: var(--primary); font-weight: 600;">chat.openai.com</a></li>
+            <li>Натисніть <strong>"Sign up"</strong> (або "Log in" якщо вже є акаунт)</li>
+            <li>Зареєструйтесь через Google, Microsoft або email</li>
+            <li>Підтвердіть email якщо потрібно</li>
+        </ol>
+        <div style="margin-top: 12px;">
+            <a href="https://chat.openai.com" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Відкрити ChatGPT
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Реєстрація в Claude AI</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Claude AI — додатковий інструмент для складних задач.</p>
+        <ol>
+            <li>Перейдіть на <a href="https://claude.ai" target="_blank" style="color: var(--primary); font-weight: 600;">claude.ai</a></li>
+            <li>Натисніть <strong>"Sign up"</strong></li>
+            <li>Зареєструйтесь через Google або email</li>
+            <li>Підтвердіть номер телефону (одноразово)</li>
+        </ol>
+        <div style="margin-top: 12px;">
+            <a href="https://claude.ai" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Відкрити Claude AI
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">Важливо про VPN</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Якщо сайти не відкриваються — увімкніть <strong>VPN</strong> (США, Європа, Канада).</p>
+        <p style="margin-top: 8px;">Рекомендовані VPN: NordVPN, ExpressVPN, Surfshark або безкоштовні розширення для браузера.</p>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Перевірка доступу</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Після реєстрації перевірте, що все працює:</p>
+        <ol>
+            <li>Відкрийте будь-якого AI-асистента з програми</li>
+            <li>Якщо відкривається діалог — все готово!</li>
+            <li>Якщо просить авторизацію — увійдіть в акаунт</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Зачем этот урок</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Все AI-ассистенты программы работают на базе <strong>ChatGPT</strong> и <strong>Claude AI</strong>. Чтобы проходить уроки, вам нужен доступ к этим платформам.</p>
+        <p style="margin-top: 12px;">Этот урок поможет настроить аккаунты и авторизоваться.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Регистрация в ChatGPT</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>ChatGPT — основная платформа для AI-ассистентов программы.</p>
+        <ol>
+            <li>Перейдите на <a href="https://chat.openai.com" target="_blank" style="color: var(--primary); font-weight: 600;">chat.openai.com</a></li>
+            <li>Нажмите <strong>"Sign up"</strong> (или "Log in" если уже есть аккаунт)</li>
+            <li>Зарегистрируйтесь через Google, Microsoft или email</li>
+            <li>Подтвердите email если нужно</li>
+        </ol>
+        <div style="margin-top: 12px;">
+            <a href="https://chat.openai.com" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Открыть ChatGPT
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Регистрация в Claude AI</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Claude AI — дополнительный инструмент для сложных задач.</p>
+        <ol>
+            <li>Перейдите на <a href="https://claude.ai" target="_blank" style="color: var(--primary); font-weight: 600;">claude.ai</a></li>
+            <li>Нажмите <strong>"Sign up"</strong></li>
+            <li>Зарегистрируйтесь через Google или email</li>
+            <li>Подтвердите номер телефона (одноразово)</li>
+        </ol>
+        <div style="margin-top: 12px;">
+            <a href="https://claude.ai" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Открыть Claude AI
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">Важно про VPN</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Если сайты не открываются — включите <strong>VPN</strong> (США, Европа, Канада).</p>
+        <p style="margin-top: 8px;">Рекомендуемые VPN: NordVPN, ExpressVPN, Surfshark или бесплатные расширения для браузера.</p>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Проверка доступа</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>После регистрации проверьте, что всё работает:</p>
+        <ol>
+            <li>Откройте любого AI-ассистента из программы</li>
+            <li>Если открывается диалог — всё готово!</li>
+            <li>Если просит авторизацию — войдите в аккаунт</li>
+        </ol>
+    </div>
+</div>
+                `,
+                
+                homework: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Зареєструйтесь в ChatGPT</li>
+            <li>Зареєструйтесь в Claude AI</li>
+            <li>Перевірте доступ — відкрийте AI-асистента термінології з уроку 1</li>
+            <li>Напишіть у полі: "Доступ налаштовано"</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Зарегистрируйтесь в ChatGPT</li>
+            <li>Зарегистрируйтесь в Claude AI</li>
+            <li>Проверьте доступ — откройте AI-ассистента терминологии из урока 1</li>
+            <li>Напишите в поле: "Доступ настроен"</li>
+        </ol>
+    </div>
+</div>
+                `,
+                
+                homeworkLink: "https://chat.openai.com",
+                homeworkLinkName: "→ Відкрити ChatGPT",
+                homeworkLinkName_ru: "→ Открыть ChatGPT",
+                time: 10
+            },
+            {
+                id: 3,
                 title: "СИСТЕМА РОЗПОРЯДЖЕНЬ",
                 subtitle: "Як проходити урок: переглянути відео",
                 
@@ -1790,7 +2029,7 @@
                 time: 15
             },
             {
-                id: 3,
+                id: 4,
                 title: "СИСТЕМА РАДАР",
                 subtitle: "Як проходити урок: переглянути відео",
                 
@@ -1912,7 +2151,7 @@
                 time: 15
             },
             {
-                id: 4,
+                id: 5,
                 title: "СИСТЕМА КОМПАС",
                 subtitle: "Інструмент аналітичного прийняття рішень",
                 
@@ -1999,7 +2238,7 @@
                 time: 15
             },
             {
-                id: 5,
+                id: 6,
                 title: "ТЕХНІЧНИЙ ПРОВІДНИК",
                 subtitle: "AI-асистент для покрокового налаштування систем",
                 
@@ -2081,58 +2320,773 @@
                 time: 15
             },
             {
-                id: 6,
-                title: "ПІДГОТОВКА ДО ПРОГРАМИ",
-                subtitle: "Перший діалоговий асистент TALKO SYSTEM",
+                id: 7,
+                title: "МАРШРУТ ПРОГРАМИ",
+                title_ru: "МАРШРУТ ПРОГРАММЫ",
+                subtitle: "AI-асистент розкаже що далі",
+                subtitle_ru: "AI-ассистент расскажет что дальше",
                 
                 videoLink: null,
                 materialsLink: null,
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Що це:</h3>
-    <p style="color: #374151; line-height: 1.7;">Це ваш перший діалоговий асистент <strong>TALKO SYSTEM</strong>, який супроводжує вас перед стартом програми. Він проведе вас через <strong>8 кроків підготовки</strong> — щоб ви точно розуміли, що буде далі і як працює система.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Що це</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Це ваш <strong>маршрут програми</strong> — повна карта всіх етапів систематизації бізнесу.</p>
+        <p style="margin-top: 12px;">AI-асистент проведе вас через кожен крок і розкаже, що потрібно зробити далі.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Ваше завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Запустіть AI-асистента.</li>
-        <li>Пройдіть діалог і дізнайтесь, які <strong>8 кроків</strong> вас чекають у підготовчому етапі.</li>
-        <li>На кожному кроці підтверджуйте, що все зрозуміло, перш ніж рухатись далі.</li>
-        <li>Якщо щось незрозуміло — попросіть пояснити простою мовою.</li>
-    </ol>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Відкрийте маршрут</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Перегляньте повну карту програми — всі етапи та їх послідовність:</p>
+        <div style="margin-top: 12px;">
+            <a href="https://alextalko.com/algoritm" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+                Відкрити маршрут програми
+            </a>
+        </div>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">✓ Для чого:</h3>
-    <p style="color: #374151; line-height: 1.7;">Щоб отримати повну картину програми та розуміти, як підготовка допоможе зробити ваш бізнес системним ще до старту впровадження.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Пройдіть AI-асистента</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Асистент розкаже:</p>
+        <ul>
+            <li>Які етапи вас чекають</li>
+            <li>Що потрібно зробити на кожному</li>
+            <li>Як підготуватись до наступних кроків</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">→ Результат:</h3>
-    <p style="color: #374151; line-height: 1.7;">Ви завершуєте спілкування з чітким розумінням:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>які кроки проходите,</li>
-        <li>що отримаєте після кожного,</li>
-        <li>і як підготуватись до першої зустрічі з консультантом TALKO.</li>
-    </ul>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ви отримаєте повне розуміння програми і будете точно знати, що робити далі на кожному етапі.</p>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Что это</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Это ваш <strong>маршрут программы</strong> — полная карта всех этапов систематизации бизнеса.</p>
+        <p style="margin-top: 12px;">AI-ассистент проведёт вас через каждый шаг и расскажет, что нужно делать дальше.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Откройте маршрут</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Просмотрите полную карту программы:</p>
+        <div style="margin-top: 12px;">
+            <a href="https://alextalko.com/algoritm" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+                Открыть маршрут программы
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Пройдите AI-ассистента</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ассистент расскажет:</p>
+        <ul>
+            <li>Какие этапы вас ждут</li>
+            <li>Что нужно сделать на каждом</li>
+            <li>Как подготовиться к следующим шагам</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Вы получите полное понимание программы и будете точно знать, что делать дальше на каждом этапе.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <p style="color: #374151; line-height: 1.7;">Пройдіть спілкування з асистентом і дізнайтесь 8 кроків підготовки.</p>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Відкрийте маршрут програми</li>
+            <li>Пройдіть AI-асистента</li>
+            <li>Напишіть у полі завдання: "Маршрут вивчено"</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Откройте маршрут программы</li>
+            <li>Пройдите AI-ассистента</li>
+            <li>Напишите в поле задания: "Маршрут изучен"</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
                 homeworkLink: "https://chatgpt.com/g/g-68568e2561ac8191a0a71e31dc7cb74d-ai-kouch-konsultant-alex-talko-pidgotovka",
-                homeworkLinkName: "→ AI-коуч підготовки",
+                homeworkLinkName: "→ AI-асистент маршруту",
+                homeworkLinkName_ru: "→ AI-ассистент маршрута",
                 time: 15
             },
             {
-                id: 7,
+                id: 8,
+                title: "ПІДГОТОВКА КОМАНДИ ДО ЗМІН",
+                title_ru: "ПОДГОТОВКА КОМАНДЫ К ИЗМЕНЕНИЯМ",
+                subtitle: "Як познайомити співробітників з проектом систематизації",
+                subtitle_ru: "Как познакомить сотрудников с проектом систематизации",
+                
+                videoLink: null,
+                materialsLink: null,
+                
+                lessonContent: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Навіщо цей урок</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Коли власник починає зміни без узгодження з командою — виникає опір. Співробітники не розуміють <strong>навіщо</strong> зміни і <strong>до чого</strong> вони приведуть.</p>
+        <p style="margin-top: 12px;">Цей урок допоможе правильно підготувати команду: пояснити суть змін, провести навчання і отримати підтримку ключових людей.</p>
+    </div>
+</div>
+
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">«Ой всьо…» — чому співробітники чинять опір?</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ви спокійно кажете: «Тут треба підучитися» — а у відповідь кисле лице, образа, пасивна агресія, мінімум дій.</p>
+        <p style="margin-top: 12px;"><strong>Причини:</strong></p>
+        <ul>
+            <li><strong>Плутають поради з нападом</strong> — будь-яка ремарка = удар по самооцінці</li>
+            <li><strong>Не розрізняють "я" і "мою дію"</strong> — "ти зробив помилку" сприймається як "ти — помилка"</li>
+            <li><strong>Образа = спосіб уникнути відповідальності</strong> — образився → став "жертвою" → нічого не зобов'язаний</li>
+            <li><strong>Критика змушує дорослішати</strong> — визнати реальність, змінити поведінку, взяти відповідальність. Це боляче.</li>
+            <li><strong>Токсична установка "я вже маю знати"</strong> — будь-яка порада = доказ слабкості</li>
+        </ul>
+        <p style="margin-top: 12px; padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;"><strong>Гола правда:</strong> Не кожен співробітник може працювати в компанії зі стандартами та регламентами. Компанія росте — не всі люди ростуть разом із нею.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Підготуйтесь до розмови</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Перед зустріччю:</strong></p>
+        <ol>
+            <li>Випишіть якості кожного ключового співробітника — чому він важливий</li>
+            <li>Напишіть власні тези розмови</li>
+            <li>Проговоріть кілька разів вголос</li>
+            <li>Увімкніть диктофон під час розмови (для звіту консультанту)</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Скрипт розмови (читайте це співробітнику)</div>
+    </div>
+    <div class="lesson-block-content">
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e; margin-bottom: 16px;">
+            <p style="font-style: italic; color: #166534; margin-bottom: 12px;">📝 <strong>Приклад скрипту — адаптуйте під себе:</strong></p>
+            
+            <p style="margin-bottom: 12px;">«Вітаю! Наша компанія дійшла до певного рубежу. <strong>Ви — ключовий співробітник</strong>, підтримка та опора всієї компанії. Нам треба разом рухатись далі, розвивати діяльність.</p>
+            
+            <p style="margin-bottom: 12px;">Для цього ми удосконалюватимемо <strong>систему управління</strong>. Я вирішив брати участь у проекті систематизації бізнесу. У процесі цього консалтингу я наводитиму порядок у компанії, і в цьому мені потрібна буде <strong>ваша допомога</strong>.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Скажіть, як ви розумієте слово "управління"?</strong></p>
+            
+            <p style="margin-bottom: 12px;"><em>[Вислухайте відповідь, потім поясніть:]</em></p>
+            
+            <p style="margin-bottom: 12px;"><strong>Управління</strong> — це коли ми погоджуємо всі наші дії, щоб вони вели нас до однієї мети. Якщо в компанії добре налагоджено управління — дії кожного співробітника ведуть до загальної мети. Якщо погано — троє йдуть до мети, один йде в інший бік. В результаті рух сповільнюється.»</p>
+        </div>
+        
+        <p style="font-weight: 600; margin-bottom: 12px;">🎨 Замальовка для пояснення (намалюйте на папері):</p>
+        <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #e5e7eb; text-align: center;">
+            <svg viewBox="0 0 400 200" style="max-width: 100%; height: auto;">
+                <!-- Good management -->
+                <text x="100" y="20" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">ДОБРЕ УПРАВЛІННЯ</text>
+                <circle cx="100" cy="100" r="8" fill="#22c55e"/>
+                <text x="100" y="130" font-size="10" fill="#374151" text-anchor="middle">МЕТА</text>
+                
+                <!-- Arrows pointing to goal -->
+                <line x1="40" y1="60" x2="85" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="100" y1="50" x2="100" y2="85" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="160" y1="60" x2="115" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+                
+                <!-- People icons good -->
+                <circle cx="40" cy="50" r="6" fill="#22c55e"/>
+                <circle cx="100" cy="40" r="6" fill="#22c55e"/>
+                <circle cx="160" cy="50" r="6" fill="#22c55e"/>
+                
+                <!-- Bad management -->
+                <text x="300" y="20" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">ПОГАНЕ УПРАВЛІННЯ</text>
+                <circle cx="300" cy="100" r="8" fill="#ef4444"/>
+                <text x="300" y="130" font-size="10" fill="#374151" text-anchor="middle">МЕТА</text>
+                
+                <!-- Arrows - some wrong direction -->
+                <line x1="240" y1="60" x2="285" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="300" y1="50" x2="300" y2="85" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="360" y1="60" x2="380" y2="80" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+                
+                <!-- People icons bad -->
+                <circle cx="240" cy="50" r="6" fill="#22c55e"/>
+                <circle cx="300" cy="40" r="6" fill="#22c55e"/>
+                <circle cx="360" cy="50" r="6" fill="#ef4444"/>
+                
+                <!-- Arrow markers -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+                    </marker>
+                    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+                    </marker>
+                </defs>
+                
+                <!-- Labels -->
+                <text x="100" y="180" font-size="11" fill="#166534" text-anchor="middle">Всі йдуть до мети ✓</text>
+                <text x="300" y="180" font-size="11" fill="#dc2626" text-anchor="middle">Один йде в інший бік ✗</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 3. Розкажіть план змін (продовження скрипту)</div>
+    </div>
+    <div class="lesson-block-content">
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e;">
+            <p style="margin-bottom: 12px;">«Внаслідок цих змін я хочу сформувати <strong>команду керівників</strong>, які керуватимуть оперативною діяльністю компанії. Я хочу, щоб кожен керівник професійно, усвідомлено займався управлінням.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Хороша новина</strong> — ці зміни ми проводитимемо поступово і плавно протягом року. Вони матимуть початок та кінець.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Ось план організаційних змін:</strong></p>
+            <ol style="margin-left: 20px; margin-bottom: 12px;">
+                <li>Опишу основну мету компанії та стратегію року</li>
+                <li>Опишу наших клієнтів та головний продукт</li>
+                <li>Опишу всі функції для виробництва продукту</li>
+                <li>Разом перерозподілимо функції, опишемо посадові інструкції</li>
+                <li>Створимо кількісну оцінку результатів (статистики)</li>
+                <li>Введемо планування завдань (щотижневе та щоденне)</li>
+                <li>Впровадимо систему письмової комунікації</li>
+                <li>З'являться регулярні координації керівників</li>
+                <li>Створимо систему фінансового планування</li>
+                <li>Почнемо цикл стратегічного планування</li>
+            </ol>
+            
+            <p style="margin-bottom: 12px;"><strong>Зміни вимагатимуть від кожного витрат часу на навчання</strong> — приблизно 10-20% робочого часу. Коли ми опануємо адміністративні функції, вони забиратимуть від 10% до 40% часу залежно від посади.</p>
+            
+            <p><strong>Що ви про це думаєте?</strong>»</p>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 4. Відповіді на типові питання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p style="margin-bottom: 12px;"><em>Не "підштовхуйте" до цих питань — відповідайте тільки якщо запитають:</em></p>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+            <p><strong>«Як торкнеться мене?»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Як точно — поки не скажу, це стане зрозумілим у процесі. Що знаю точно — будь-які зміни ми з вами обов'язково погоджуватимемо.»</p>
+        </div>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+            <p><strong>«Навіщо щось міняти, у нас все й так непогано?»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Пам'ятаєте, ми змінювали [наведіть приклад]? Спочатку виглядало дивним, але тепер ми без цього не уявляємо роботу. Якщо щось здаватиметься незрозумілим — я готовий обговорювати.»</p>
+        </div>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px;">
+            <p><strong>«Багато адміністрування — це погано!»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Я розумію, у вас був різний досвід. Пройдіть навчання і ми повернемося до цієї розмови. Постарайтеся розглянути це як нову ідею.»</p>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 5. Надішліть на навчання в Team Academy AI</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Завершіть розмову так:</p>
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e; margin: 12px 0;">
+            <p>«Щоб ви краще зрозуміли всі зміни, вам потрібно пройти <strong>навчання з AI-асистентом</strong>. Він розкаже про всі інструменти управління. Після навчання заповніть тест і надішліть мені відповіді.</p>
+            <p style="margin-top: 8px;"><strong>Готові пройти це навчання до [дата]?</strong>»</p>
+        </div>
+        
+        <p style="margin-top: 12px;"><strong>Асистент навчить співробітників:</strong></p>
+        <ul>
+            <li>Етапам розвитку компанії</li>
+            <li>Що таке мета, задум, ЦКП</li>
+            <li>Рівням мотивації співробітників</li>
+            <li>Функціональній структурі (оргсхемі)</li>
+            <li>Статистикам, плануванню, координації</li>
+            <li>Фінансовому та стратегічному плануванню</li>
+        </ul>
+        
+        <div style="margin-top: 16px;">
+            <a href="https://chatgpt.com/g/g-694ea789f6fc8191a90694aae93de819-team-academy-ai" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Team Academy AI — надішліть це посилання співробітникам
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 6. Зберіть відповіді на тест</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Після навчання співробітники відповідають на тест. Це підтверджує, що вони розуміють зміни.</p>
+        <p style="margin-top: 12px; font-weight: 600;">Питання тесту (надішліть співробітникам):</p>
+        <ol style="font-size: 14px; background: #f9fafb; padding: 16px 16px 16px 36px; border-radius: 8px; margin-top: 8px;">
+            <li>Назвіть етапи розвитку компанії</li>
+            <li>Чи можуть гроші бути метою компанії? Чому?</li>
+            <li>У чому основна мета будь-якого бізнесу?</li>
+            <li>Що таке задум компанії?</li>
+            <li>Які рівні мотивації людей у компанії? Опишіть їх</li>
+            <li>Який рівень мотивації є найціннішим? Чому?</li>
+            <li>Що таке ЦКП? Розшифруйте кожне слово</li>
+            <li>Чи повинен кожен співробітник знати свій ЦКП? Чому?</li>
+            <li>Що таке посадова папка? Навіщо вона потрібна?</li>
+            <li>Чи залежить продуктивність команди від найсильнішого гравця? Чому?</li>
+            <li>Скільки відділень має бути в компанії за оргсхемою? Чому?</li>
+            <li>Яке відділення йде найпершим? Чому?</li>
+            <li>У чому різниця 2 та 6 відділень?</li>
+            <li>Що таке план? З чого починати планування?</li>
+            <li>Що таке координація і навіщо вона потрібна?</li>
+            <li>Як часто має здійснюватися фінансове планування?</li>
+            <li>Що таке фінансові резерви? Навіщо їх створювати?</li>
+            <li>Як підвищити мотивацію співробітників на рівні "особиста вигода"?</li>
+            <li>Чи може команда працювати на рівні "почуття обов'язку" при лідері на рівні "особова переконаність"?</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат уроку</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>✅ Ключові співробітники розуміють, що буде відбуватися</li>
+            <li>✅ Вони пройшли навчання і здали тест</li>
+            <li>✅ Вони готові підтримувати вас у змінах</li>
+            <li>✅ Опір мінімізовано через розуміння</li>
+        </ul>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Зачем этот урок</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Когда собственник начинает изменения без согласования с командой — возникает сопротивление. Сотрудники не понимают <strong>зачем</strong> изменения и <strong>к чему</strong> они приведут.</p>
+        <p style="margin-top: 12px;">Этот урок поможет правильно подготовить команду: объяснить суть изменений, провести обучение и получить поддержку ключевых людей.</p>
+    </div>
+</div>
+
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">«Ой всё…» — почему сотрудники сопротивляются?</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Вы спокойно говорите: «Тут надо подучиться» — а в ответ кислое лицо, обида, пассивная агрессия.</p>
+        <p style="margin-top: 12px;"><strong>Причины:</strong></p>
+        <ul>
+            <li><strong>Путают советы с нападением</strong> — любое замечание = удар по самооценке</li>
+            <li><strong>Не различают "я" и "моё действие"</strong> — "ты сделал ошибку" воспринимается как "ты — ошибка"</li>
+            <li><strong>Обида = способ избежать ответственности</strong></li>
+            <li><strong>Критика заставляет взрослеть</strong> — признать реальность, изменить поведение</li>
+            <li><strong>Токсичная установка "я уже должен знать"</strong> — любой совет = доказательство слабости</li>
+        </ul>
+        <p style="margin-top: 12px; padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;"><strong>Голая правда:</strong> Не каждый сотрудник может работать в компании со стандартами и регламентами. Компания растёт — не все люди растут вместе с ней.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Подготовьтесь к разговору</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Перед встречей:</strong></p>
+        <ol>
+            <li>Выпишите качества каждого ключевого сотрудника — почему он важен</li>
+            <li>Напишите собственные тезисы разговора</li>
+            <li>Проговорите несколько раз вслух</li>
+            <li>Включите диктофон во время разговора (для отчёта консультанту)</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Скрипт разговора (читайте это сотруднику)</div>
+    </div>
+    <div class="lesson-block-content">
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e; margin-bottom: 16px;">
+            <p style="font-style: italic; color: #166534; margin-bottom: 12px;">📝 <strong>Пример скрипта — адаптируйте под себя:</strong></p>
+            
+            <p style="margin-bottom: 12px;">«Приветствую! Наша компания дошла до определённого рубежа. <strong>Вы — ключевой сотрудник</strong>, поддержка и опора всей компании. Нам нужно вместе двигаться дальше, развивать деятельность.</p>
+            
+            <p style="margin-bottom: 12px;">Для этого мы будем совершенствовать <strong>систему управления</strong>. Я решил участвовать в проекте систематизации бизнеса. В процессе этого консалтинга я буду наводить порядок в компании, и в этом мне понадобится <strong>ваша помощь</strong>.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Скажите, как вы понимаете слово "управление"?</strong></p>
+            
+            <p style="margin-bottom: 12px;"><em>[Выслушайте ответ, затем объясните:]</em></p>
+            
+            <p style="margin-bottom: 12px;"><strong>Управление</strong> — это когда мы согласовываем все наши действия, чтобы они вели нас к одной цели. Если в компании хорошо налажено управление — действия каждого сотрудника ведут к общей цели. Если плохо — трое идут к цели, один идёт в другую сторону. В результате движение замедляется.»</p>
+        </div>
+        
+        <p style="font-weight: 600; margin-bottom: 12px;">🎨 Зарисовка для объяснения (нарисуйте на бумаге):</p>
+        <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #e5e7eb; text-align: center;">
+            <svg viewBox="0 0 400 200" style="max-width: 100%; height: auto;">
+                <!-- Good management -->
+                <text x="100" y="20" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">ХОРОШЕЕ УПРАВЛЕНИЕ</text>
+                <circle cx="100" cy="100" r="8" fill="#22c55e"/>
+                <text x="100" y="130" font-size="10" fill="#374151" text-anchor="middle">ЦЕЛЬ</text>
+                
+                <!-- Arrows pointing to goal -->
+                <line x1="40" y1="60" x2="85" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowRu)"/>
+                <line x1="100" y1="50" x2="100" y2="85" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowRu)"/>
+                <line x1="160" y1="60" x2="115" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowRu)"/>
+                
+                <!-- People icons good -->
+                <circle cx="40" cy="50" r="6" fill="#22c55e"/>
+                <circle cx="100" cy="40" r="6" fill="#22c55e"/>
+                <circle cx="160" cy="50" r="6" fill="#22c55e"/>
+                
+                <!-- Bad management -->
+                <text x="300" y="20" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">ПЛОХОЕ УПРАВЛЕНИЕ</text>
+                <circle cx="300" cy="100" r="8" fill="#ef4444"/>
+                <text x="300" y="130" font-size="10" fill="#374151" text-anchor="middle">ЦЕЛЬ</text>
+                
+                <!-- Arrows - some wrong direction -->
+                <line x1="240" y1="60" x2="285" y2="92" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowRu)"/>
+                <line x1="300" y1="50" x2="300" y2="85" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowRu)"/>
+                <line x1="360" y1="60" x2="380" y2="80" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRedRu)"/>
+                
+                <!-- People icons bad -->
+                <circle cx="240" cy="50" r="6" fill="#22c55e"/>
+                <circle cx="300" cy="40" r="6" fill="#22c55e"/>
+                <circle cx="360" cy="50" r="6" fill="#ef4444"/>
+                
+                <!-- Arrow markers -->
+                <defs>
+                    <marker id="arrowRu" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+                    </marker>
+                    <marker id="arrowRedRu" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+                    </marker>
+                </defs>
+                
+                <!-- Labels -->
+                <text x="100" y="180" font-size="11" fill="#166534" text-anchor="middle">Все идут к цели ✓</text>
+                <text x="300" y="180" font-size="11" fill="#dc2626" text-anchor="middle">Один идёт в другую сторону ✗</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Расскажите план изменений (продолжение скрипта)</div>
+    </div>
+    <div class="lesson-block-content">
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e;">
+            <p style="margin-bottom: 12px;">«В результате этих изменений я хочу сформировать <strong>команду руководителей</strong>, которые будут управлять оперативной деятельностью компании.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Хорошая новость</strong> — эти изменения мы будем проводить постепенно и плавно в течение года.</p>
+            
+            <p style="margin-bottom: 12px;"><strong>Вот план организационных изменений:</strong></p>
+            <ol style="margin-left: 20px; margin-bottom: 12px;">
+                <li>Опишу основную цель компании и стратегию года</li>
+                <li>Опишу наших клиентов и главный продукт</li>
+                <li>Опишу все функции для производства продукта</li>
+                <li>Вместе перераспределим функции, опишем должностные инструкции</li>
+                <li>Создадим количественную оценку результатов (статистики)</li>
+                <li>Введём планирование задач (еженедельное и ежедневное)</li>
+                <li>Внедрим систему письменной коммуникации</li>
+                <li>Появятся регулярные координации руководителей</li>
+                <li>Создадим систему финансового планирования</li>
+                <li>Начнём цикл стратегического планирования</li>
+            </ol>
+            
+            <p><strong>Что вы об этом думаете?</strong>»</p>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 4. Ответы на типичные вопросы</div>
+    </div>
+    <div class="lesson-block-content">
+        <p style="margin-bottom: 12px;"><em>Не "подталкивайте" к этим вопросам — отвечайте только если спросят:</em></p>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+            <p><strong>«Как это коснётся меня?»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Как точно — пока не скажу, это станет понятным в процессе. Что знаю точно — любые изменения мы с вами обязательно будем согласовывать.»</p>
+        </div>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+            <p><strong>«Зачем что-то менять, у нас всё и так неплохо?»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Помните, мы меняли [приведите пример]? Сначала выглядело странно, но теперь мы без этого не представляем работу.»</p>
+        </div>
+        
+        <div style="padding: 12px; background: #f9fafb; border-radius: 8px;">
+            <p><strong>«Много администрирования — это плохо!»</strong></p>
+            <p style="color: #166534; margin-top: 4px;">→ «Я понимаю, у вас был разный опыт. Пройдите обучение и мы вернёмся к этому разговору.»</p>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 5. Отправьте на обучение в Team Academy AI</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Завершите разговор так:</p>
+        <div style="padding: 16px; background: #f0fdf4; border-radius: 12px; border: 1px solid #22c55e; margin: 12px 0;">
+            <p>«Чтобы вы лучше поняли все изменения, вам нужно пройти <strong>обучение с AI-ассистентом</strong>. Он расскажет обо всех инструментах управления. После обучения заполните тест и отправьте мне ответы.</p>
+            <p style="margin-top: 8px;"><strong>Готовы пройти это обучение до [дата]?</strong>»</p>
+        </div>
+        
+        <div style="margin-top: 16px;">
+            <a href="https://chatgpt.com/g/g-694ea789f6fc8191a90694aae93de819-team-academy-ai" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Team Academy AI — отправьте эту ссылку сотрудникам
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 6. Соберите ответы на тест</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>После обучения сотрудники отвечают на тест. Это подтверждает, что они понимают изменения.</p>
+        <p style="margin-top: 12px; font-weight: 600;">Вопросы теста (отправьте сотрудникам):</p>
+        <ol style="font-size: 14px; background: #f9fafb; padding: 16px 16px 16px 36px; border-radius: 8px; margin-top: 8px;">
+            <li>Назовите этапы развития компании</li>
+            <li>Могут ли деньги быть целью компании? Почему?</li>
+            <li>В чём основная цель любого бизнеса?</li>
+            <li>Что такое замысел компании?</li>
+            <li>Какие уровни мотивации людей в компании? Опишите их</li>
+            <li>Какой уровень мотивации самый ценный? Почему?</li>
+            <li>Что такое ЦКП? Расшифруйте каждое слово</li>
+            <li>Должен ли каждый сотрудник знать свой ЦКП? Почему?</li>
+            <li>Что такое должностная папка? Зачем она нужна?</li>
+            <li>Зависит ли продуктивность команды от самого сильного игрока? Почему?</li>
+            <li>Сколько отделений должно быть в компании по оргсхеме? Почему?</li>
+            <li>Какое отделение идёт первым? Почему?</li>
+            <li>В чём разница 2 и 6 отделений?</li>
+            <li>Что такое план? С чего начинать планирование?</li>
+            <li>Что такое координация и зачем она нужна?</li>
+            <li>Как часто должно осуществляться финансовое планирование?</li>
+            <li>Что такое финансовые резервы? Зачем их создавать?</li>
+            <li>Как повысить мотивацию сотрудников на уровне "личная выгода"?</li>
+            <li>Может ли команда работать на уровне "чувство долга" при лидере на уровне "личная убеждённость"?</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат урока</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>✅ Ключевые сотрудники понимают, что будет происходить</li>
+            <li>✅ Они прошли обучение и сдали тест</li>
+            <li>✅ Они готовы поддерживать вас в изменениях</li>
+            <li>✅ Сопротивление минимизировано через понимание</li>
+        </ul>
+    </div>
+</div>
+                `,
+                
+                homework: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Визначте ключових співробітників (2-5 осіб)</li>
+            <li>Підготуйте скрипт розмови (адаптуйте приклад під себе)</li>
+            <li>Проведіть розмову з кожним (запишіть на диктофон)</li>
+            <li>Надішліть їм посилання на Team Academy AI</li>
+            <li>Зберіть відповіді на тест від кожного</li>
+            <li>Завантажте скріни/фото відповідей у Google Документ</li>
+            <li>Прикріпіть посилання на документ</li>
+        </ol>
+    </div>
+</div>
+                `,
+
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Определите ключевых сотрудников (2-5 человек)</li>
+            <li>Подготовьте скрипт разговора (адаптируйте пример под себя)</li>
+            <li>Проведите разговор с каждым (запишите на диктофон)</li>
+            <li>Отправьте им ссылку на Team Academy AI</li>
+            <li>Соберите ответы на тест от каждого</li>
+            <li>Загрузите скрины/фото ответов в Google Документ</li>
+            <li>Прикрепите ссылку на документ</li>
+        </ol>
+    </div>
+</div>
+                `,
+                
+                homeworkLink: "https://chatgpt.com/g/g-694ea789f6fc8191a90694aae93de819-team-academy-ai",
+                homeworkLinkName: "→ Team Academy AI",
+                homeworkLinkName_ru: "→ Team Academy AI",
+                time: 60
+            },
+            {
+                id: 9,
                 title: "АНАЛІЗ ТОЧОК РОСТУ ТА МИСЛЕННЯ",
                 subtitle: "Інструмент самоаналізу для визначення справжніх причин проблем",
                 
@@ -2140,51 +3094,64 @@
                 materialsLink: null,
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Що це:</h3>
-    <p style="color: #374151; line-height: 1.7;"><strong>Асистент розвитку та мислення</strong> — це інструмент для <strong>самоаналізу</strong>, який допомагає в будь-який момент протестувати, <strong>де саме зараз ваша точка росту</strong>. Він допомагає зрозуміти, чи справжня причина уповільнення у:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>інструментах,</li>
-        <li>бізнес-моделі,</li>
-        <li>цілях,</li>
-        <li>чи у власних переконаннях.</li>
-    </ul>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Що це</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Асистент розвитку та мислення</strong> — це інструмент для самоаналізу, який допомагає в будь-який момент протестувати, де саме зараз ваша точка росту.</p>
+        <p style="margin-top: 12px;">Він допомагає зрозуміти, чи справжня причина уповільнення у інструментах, бізнес-моделі, цілях, чи у власних переконаннях.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Ваше завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li><strong>Пройдіть діалог із асистентом.</strong></li>
-        <li>Ставте питання типу:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>«Для чого мені це потрібно?»</li>
-                <li>«Що заважає мені рухатись далі?»</li>
-            </ul>
-        </li>
-        <li>Не бійтеся "завантажити" асистента своїми питаннями — саме так ви отримаєте чесний зріз власного мислення.</li>
-    </ol>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">Ваше завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть діалог із асистентом</li>
+            <li>Ставте питання типу: "Для чого мені це потрібно?", "Що заважає мені рухатись далі?"</li>
+            <li>Не бійтеся "завантажити" асистента своїми питаннями</li>
+        </ol>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">✓ Для чого:</h3>
-    <p style="color: #374151; line-height: 1.7;">Щоб навчитися бачити справжні причини, а не симптоми проблем, і фокусуватись на тих точках росту, які реально впливають на прибуток, команду та масштабування.</p>
-</div>
-
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">→ Результат:</h3>
-    <p style="color: #374151; line-height: 1.7;">Ви визначите:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>на якому рівні знаходиться ваша головна проблема;</li>
-        <li>які обмежуючі переконання її підтримують;</li>
-        <li>свою ключову <strong>ціль на рік у цифрах</strong>.</li>
-    </ul>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Результат</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Ви визначите:</p>
+        <ul>
+            <li>на якому рівні знаходиться ваша головна проблема</li>
+            <li>які обмежуючі переконання її підтримують</li>
+            <li>свою ключову ціль на рік у цифрах</li>
+        </ul>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <p style="color: #374151; line-height: 1.7;">Пройдіть діалог з асистентом і визначте вашу точку росту.</p>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Пройдіть діалог з асистентом і визначте вашу точку росту.</p>
+    </div>
 </div>
                 `,
                 
@@ -2193,7 +3160,7 @@
                 time: 15
             },
             {
-                id: 8,
+                id: 10,
                 title: "ЦІЛЬ І ЗАДУМ",
                 title_ru: "ЦЕЛЬ И ЗАМЫСЕЛ",
                 subtitle: "Як проходити урок: переглянути відео",
@@ -2342,7 +3309,7 @@
                 time: 15
             },
             {
-                id: 9,
+                id: 11,
                 title: "ПРОДУКТ ОРГАНІЗАЦІЇ",
                 title_ru: "ПРОДУКТ ОРГАНИЗАЦИИ",
                 subtitle: "Як проходити урок: переглянути відео",
@@ -2487,7 +3454,7 @@
                 time: 30
             },
             {
-                id: 10,
+                id: 12,
                 title: "ФУНКЦІОНАЛЬНА СТРУКТУРА ТА РОЛІ",
                 title_ru: "ФУНКЦИОНАЛЬНАЯ СТРУКТУРА И РОЛИ",
                 subtitle: "Як проходити урок: переглянути відео",
@@ -2633,7 +3600,7 @@
                 time: 90
             },
             {
-                id: 11,
+                id: 13,
                 title: "СИСТЕМА СТАТИСТИК",
                 title_ru: "СИСТЕМА СТАТИСТИК",
                 subtitle: "Як проходити урок: переглянути відео",
@@ -2782,248 +3749,349 @@
                 time: 15
             },
             {
-                id: 12,
-                title: "ПРАКТИЧНЕ ОСВОЄННЯ ПЛАТФОРМИ TALKO SYSTEM",
-                subtitle: "Як проходити урок: переглянути відео",
+                id: 14,
+                title: "ОСВОЄННЯ ПЛАТФОРМИ TALKO STRUCTURE",
+                title_ru: "ОСВОЕНИЕ ПЛАТФОРМЫ TALKO STRUCTURE",
+                subtitle: "Побудова функціональної структури бізнесу",
+                subtitle_ru: "Построение функциональной структуры бизнеса",
                 
                 videoLink: "https://youtu.be/kfiFG5VMTY0?si=7nCKfpLKc7-EpFNR",
                 materialsLink: null,
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Ціль</h3>
-    <p style="color: #374151; line-height: 1.7;">Створити візуальну функціональну структуру бізнесу — основу системного управління.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Ціль уроку</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Створити візуальну функціональну структуру бізнесу на платформі <strong>TALKO Structure</strong> — основу системного управління.</p>
+        <div style="margin-top: 12px;">
+            <a href="https://alextalko.com/tms" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                Відкрити платформу TALKO Structure
+            </a>
+        </div>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► Завдання</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Зареєструйтесь на платформі <a href="https://alextalko.com/tms" target="_blank" style="color: #2563eb; text-decoration: underline;">alextalko.com/tms</a></li>
-        <li>Ознайомтесь із розділом «Функції»</li>
-        <li>Створіть функціональну структуру компанії:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>відобразіть усі функції бізнесу (адміністрація, маркетинг, продажі, фінанси, сервіс тощо);</li>
-                <li>для кожної функції додайте:
-                    <ul style="margin-top: 0.25rem; padding-left: 1rem;">
-                        <li>ЦКП (цінний кінцевий продукт)</li>
-                        <li>статистику відстеження</li>
-                        <li>відповідального</li>
-                        <li>співробітників, які виконують цю функцію</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Зробіть скрін структури</li>
-        <li>Завантажте його в Google Документ</li>
-        <li>Вставте посилання на документ у поле домашнього завдання</li>
-    </ol>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Реєстрація та вхід</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Увійдіть з email + пароль</li>
+            <li>Якщо забули пароль → зверніться до адміна</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">✓ Підтримка</h3>
-    <p style="color: #374151; line-height: 1.7;">Якщо потрібна допомога — скористайтесь AI-консультантом платформи. Він підкаже, як правильно створити функції та заповнити ЦКП, статистику й ролі.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Створення базової структури</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Натисніть «+» на канвасі</li>
+            <li>Введіть: назву функції, відповідального, колір</li>
+            <li>Натисніть "Зберегти"</li>
+            <li>Перетягніть блок у потрібне місце (Drag & Drop)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 3. Створення підфункцій</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Наведіть курсор на функцію → знизу з'явиться кнопка «+»</li>
+            <li>Натисніть — створиться підфункція</li>
+            <li>Так формується ієрархія: "Продажі" → "B2B", "B2C", "Онлайн"</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 4. KPI / Показники</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Відкрийте функцію (клік)</li>
+            <li>Перейдіть до вкладки «Статистика»</li>
+            <li>Натисніть «+» та введіть: назву показника, значення, колір</li>
+            <li>Можна додати до 4 KPI на одну функцію</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 5. Додавання співробітників</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Відкрийте функцію</li>
+            <li>Прокрутіть до блоку «Співробітники»</li>
+            <li>Введіть імена працівників</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 6. Зв'язки між функціями</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Натисніть «+» внизу функції</li>
+            <li>Оберіть або створіть нову функцію</li>
+            <li>Вони з'єднаються лінією</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 7. Експорт структури</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Іконка експорту праворуч зверху</li>
+            <li>JPEG — картинка структури</li>
+            <li>PDF — файл з клікабельними посиланнями</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Порада</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Створіть структуру як "бізнес на папері". Уявіть: ви у відпустці — а команда працює самостійно, бо все задокументовано.</p>
+    </div>
+</div>
+                `,
+
+                lessonContent_ru: `
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Цель урока</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Создать визуальную функциональную структуру бизнеса на платформе <strong>TALKO Structure</strong>.</p>
+        <div style="margin-top: 12px;">
+            <a href="https://alextalko.com/tms" target="_blank" class="action-btn primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                Открыть платформу TALKO Structure
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 1. Регистрация и вход</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Войдите с email + пароль</li>
+            <li>Если забыли пароль → обратитесь к админу</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 2. Создание базовой структуры</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Нажмите «+» на канвасе</li>
+            <li>Введите: название функции, ответственного, цвет</li>
+            <li>Нажмите "Сохранить"</li>
+            <li>Перетащите блок в нужное место (Drag & Drop)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 3. Создание подфункций</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Наведите курсор на функцию → снизу появится кнопка «+»</li>
+            <li>Нажмите — создастся подфункция</li>
+            <li>Так формируется иерархия: "Продажи" → "B2B", "B2C", "Онлайн"</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 4. KPI / Показатели</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Откройте функцию (клик)</li>
+            <li>Перейдите во вкладку «Статистика»</li>
+            <li>Нажмите «+» и введите: название показателя, значение, цвет</li>
+            <li>Можно добавить до 4 KPI на одну функцию</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 5. Добавление сотрудников</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Откройте функцию</li>
+            <li>Прокрутите до блока «Сотрудники»</li>
+            <li>Введите имена работников</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 6. Связи между функциями</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Нажмите «+» внизу функции</li>
+            <li>Выберите или создайте новую функцию</li>
+            <li>Они соединятся линией</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">ШАГ 7. Экспорт структуры</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Иконка экспорта справа сверху</li>
+            <li>JPEG — картинка структуры</li>
+            <li>PDF — файл с кликабельными ссылками</li>
+        </ul>
+    </div>
+</div>
+
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Совет</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Создайте структуру как "бизнес на бумаге". Представьте: вы в отпуске — а команда работает самостоятельно, потому что всё задокументировано.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Створіть функціональну структуру на платформі</li>
-        <li>Зробіть скрін готової структури</li>
-        <li>Завантажте скрін у Google Документ</li>
-        <li>Прикріпіть посилання на документ</li>
-    </ol>
-</div>
-                `,
-                
-                homeworkLink: "https://chatgpt.com/g/g-6870bc9f1658819192171561f5d8fe53-ai-konsultant-platformi-talko-management-system",
-                homeworkLinkName: "→ AI-консультант платформи",
-                time: 30
-            },
-            {
-                id: 13,
-                title: "КОНСУЛЬТАЦІЯ ТА ЗАТВЕРДЖЕННЯ",
-                subtitle: "Як проходити урок: переглянути відео",
-                
-                videoLink: "https://youtu.be/kFXdmyRp13k",
-                materialsLink: "https://drive.google.com/drive/folders/1-vKAPz8KLc0YM9uk6viqPSHHM5CjI1Zt?usp=sharing",
-                
-                lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #dc2626;">● Проблема без цього</h3>
-    <p style="color: #374151; line-height: 1.7;">За даними IBM Research, 70% самостійних впроваджень містять критичні помилки, що знижують ефективність на 40–50%.</p>
-    <p style="color: #dc2626; font-weight: 600; line-height: 1.7; margin-top: 0.5rem;">Ваші втрати: ≈ 45% ефективності системи.</p>
-</div>
-
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">► Результат</h3>
-    <p style="color: #374151; line-height: 1.7;">Експертна перевірка усуває 90% помилок → система працює на 80% ефективніше. Власник упевнений, що рухається правильно, без втрати часу й ресурсів.</p>
-</div>
-
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Завдання залежно від тарифу</h3>
-    
-    <div style="padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 8px; margin-bottom: 1rem;">
-        <h4 style="font-weight: 600; color: #1e40af; margin-bottom: 0.5rem;">START</h4>
-        <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-            <li>Перегляньте відео «Як перевірити систему перед запуском»</li>
-            <li>Самостійно звірте свої матеріали за чек-листом</li>
-        </ul>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
     </div>
-
-    <div style="padding: 1rem; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 8px; margin-bottom: 1rem;">
-        <h4 style="font-weight: 600; color: #047857; margin-bottom: 0.5rem;">PRO GROUP</h4>
-        <p style="color: #374151; line-height: 1.7; margin-bottom: 0.5rem;">Підготуйте:</p>
-        <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-            <li>Політику по цілі та задуму</li>
-            <li>Політику по ЦКП та продукту організації</li>
-            <li>Функціональну структуру</li>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Створіть функціональну структуру на платформі</li>
+            <li>Додайте всі функції бізнесу (адміністрація, маркетинг, продажі, фінанси)</li>
+            <li>Для кожної функції додайте: ЦКП, статистику, відповідального</li>
+            <li>Зробіть експорт (JPEG або PDF)</li>
+            <li>Прикріпіть посилання на документ</li>
         </ol>
-        <p style="color: #374151; line-height: 1.7; margin-top: 0.5rem;">Надішліть ці документи на груповий розбір.</p>
-    </div>
-
-    <div style="padding: 1rem; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px; margin-bottom: 1rem;">
-        <h4 style="font-weight: 600; color: #92400e; margin-bottom: 0.5rem;">ELITE INDIVIDUAL</h4>
-        <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-            <li>Запишіться на індивідуальну консультацію з Олексом в телеграмі <a href="https://t.me/talcoconsulting" target="_blank" style="color: #2563eb; text-decoration: underline;">@talcoconsulting</a></li>
-            <li>Підготуйте всі політики й структуру для затвердження</li>
-        </ul>
     </div>
 </div>
                 `,
-                
-                homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Підготуйте матеріали відповідно до вашого тарифу</li>
-        <li>Запишіться або надішліть файли на перевірку</li>
-        <li>У Google Docs створіть документ із:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>основними рекомендаціями ментора</li>
-                <li>планом виправлень</li>
-            </ul>
-        </li>
-        <li>Додайте посилання на документ у полі ДЗ</li>
-    </ol>
-</div>
-                `,
-                
-                homeworkLink: "https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e",
-                homeworkLinkName: "→ Записатися на консультацію",
-                time: 60
-            },
-            {
-                id: 14,
-                title: "АНАЛІЗ ВУЗЬКОГО МІСЦЯ",
-                subtitle: "Як проходити урок: переглянути відео",
-                
-                videoLink: "https://youtu.be/5_vkt8mp3Eg",
-                materialsLink: null,
-                
-                lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #dc2626;">● Проблема без цього</h3>
-    <p style="color: #374151; line-height: 1.7;">За даними Theory of Constraints Institute, 95% зусиль витрачаються не на головне обмеження — це знижує ефективність покращень на 80%.</p>
-    <p style="color: #dc2626; font-weight: 600; line-height: 1.7; margin-top: 0.5rem;">Ваші втрати: до 35% потенційного росту через розпорошення зусиль.</p>
-</div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #16a34a;">► Результат</h3>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Визначено 1 головне вузьке місце</li>
-        <li>Складено 3 варіанти рішень</li>
-        <li>Сформовано програму дій і розпорядження до кожного пункту</li>
-        <li>Всі розпорядження внесені в програму розпоряджень на платформі</li>
-    </ul>
-</div>
-
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Кроки</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть діалог з AI-аналізатором вузьких місць</li>
-        <li>На основі результатів:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>визначте головне обмеження</li>
-                <li>створіть програму дій</li>
-                <li>додайте розпорядження до кожного пункту у програму розпоряджень</li>
-            </ul>
-        </li>
-    </ol>
-</div>
-
-<div style="margin-top: 1.5rem; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 8px; margin-bottom: 2rem;">
-    <p style="margin: 0; color: #1e40af; font-weight: 600;">Домашнього завдання немає — усі дії виконуються безпосередньо на платформі.</p>
-</div>
-
-<button id="complete-lesson-14-btn" onclick="submitHomework()" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Завершити урок</button>
-                `,
-                
-                homeworkLink: "https://chatgpt.com/g/g-6856346cb4c481918bb7e00d87b59d9c-ai-alex-talko-analiz-vuzkikh-mists",
-                homeworkLinkName: "→ AI-аналізатор вузьких місць",
-                time: 15
-            },
-            {
-                id: 15,
-                title: "ФІДБЕК ТА ОЦІНКА РЕЗУЛЬТАТІВ",
-                subtitle: "Заключний урок програми",
-                
-                videoLink: null,
-                materialsLink: null,
-                
-                lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Завдання</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть AI-асистента оцінки результатів</li>
-        <li>Внесіть відповіді в Google Документ:
-            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                <li>оцінка програми (1–10)</li>
-                <li>що змінилося в бізнесі</li>
-                <li>над чим плануєте працювати 30 днів</li>
-            </ul>
-        </li>
-        <li>Прикріпіть посилання на документ у полі завдання</li>
-    </ol>
-</div>
-
-<div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;">
-    <h3 style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Оберіть наступну програму навчання:</h3>
-    
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <a href="https://alextalko.com/learning-platform-marketing-and-sales-system" target="_blank" style="display: block; padding: 1rem; background: rgba(255, 255, 255, 0.95); border-radius: 8px; text-decoration: none; transition: transform 0.2s ease; color: #1a202c;" onmouseover="this.style.transform='translateX(5px)'; this.style.background='white'" onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255, 255, 255, 0.95)'">
-            <div style="font-weight: 600; font-size: 1.125rem; margin-bottom: 0.25rem; color: #2563eb;">→ Система маркетингу та продажів</div>
-            <div style="font-size: 0.875rem; color: #718096;">Побудуйте системний підхід до залучення та конвертації клієнтів</div>
-        </a>
-        
-        <a href="https://alextalko.com/hiring-and-team-building-system" target="_blank" style="display: block; padding: 1rem; background: rgba(255, 255, 255, 0.95); border-radius: 8px; text-decoration: none; transition: transform 0.2s ease; color: #1a202c;" onmouseover="this.style.transform='translateX(5px)'; this.style.background='white'" onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255, 255, 255, 0.95)'">
-            <div style="font-weight: 600; font-size: 1.125rem; margin-bottom: 0.25rem; color: #2563eb;">→ Система найму та побудови команди</div>
-            <div style="font-size: 0.875rem; color: #718096;">Навчіться наймати правильних людей та будувати сильну команду</div>
-        </a>
-        
-        <a href="https://alextalko.com/financecourse" target="_blank" style="display: block; padding: 1rem; background: rgba(255, 255, 255, 0.95); border-radius: 8px; text-decoration: none; transition: transform 0.2s ease; color: #1a202c;" onmouseover="this.style.transform='translateX(5px)'; this.style.background='white'" onmouseout="this.style.transform='translateX(0)'; this.style.background='rgba(255, 255, 255, 0.95)'">
-            <div style="font-weight: 600; font-size: 1.125rem; margin-bottom: 0.25rem; color: #2563eb;">→ Система фінансів</div>
-            <div style="font-size: 0.875rem; color: #718096;">Встановіть повний контроль над фінансами вашого бізнесу</div>
-        </a>
+                homework_ru: `
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнее задание</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Создайте функциональную структуру на платформе</li>
+            <li>Добавьте все функции бизнеса (администрация, маркетинг, продажи, финансы)</li>
+            <li>Для каждой функции добавьте: ЦКП, статистику, ответственного</li>
+            <li>Сделайте экспорт (JPEG или PDF)</li>
+            <li>Прикрепите ссылку на документ</li>
+        </ol>
     </div>
 </div>
                 `,
                 
-                homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройдіть AI-асистента оцінки результатів</li>
-        <li>Створіть Google Документ з відповідями</li>
-        <li>Прикріпіть посилання на документ</li>
-    </ol>
-</div>
-                `,
-                
-                homeworkLink: "https://chatgpt.com/g/g-689af24a7c708191a7a0bd78c1d02614-final-feedback-on-the-program",
-                homeworkLinkName: "→ AI-асистент оцінки результатів",
-                time: 15
+                homeworkLink: "https://chatgpt.com/g/g-6870bc9f1658819192171561f5d8fe53-ai-consultant-talko-management-system",
+                homeworkLinkName: "→ AI-консультант платформи",
+                homeworkLinkName_ru: "→ AI-консультант платформы",
+                time: 30
             }
         ];
 
