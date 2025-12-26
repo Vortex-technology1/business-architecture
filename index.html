@@ -2,9 +2,23 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Архітектура Бізнесу - Навчальна платформа</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TALKO System | Навчальна платформа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #16a34a;
+            --primary-light: rgba(34, 197, 94, 0.1);
+            --bg-dark: #0a0f0a;
+            --text-secondary: #94a3b8;
+            --text-gray: #64748b;
+            --border: rgba(255, 255, 255, 0.1);
+            --border-light: #e2e8f0;
+            --red: #ef4444;
+            --blue: #3b82f6;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,13 +26,14 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .hidden {
@@ -29,21 +44,39 @@
         .login-container {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            padding: 32px 24px;
             max-width: 400px;
             width: 100%;
         }
 
         .login-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
+        }
+
+        .login-logo {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .login-logo svg {
+            width: 28px;
+            height: 28px;
+            color: var(--bg-dark);
         }
 
         .login-header h1 {
-            font-size: 28px;
-            color: #1a202c;
-            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 6px;
         }
 
         .login-header p {
@@ -74,21 +107,21 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
         }
 
         .login-btn {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,7 +129,9 @@
         }
 
         .login-btn:hover:not(:disabled) {
+            background: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
         }
 
         .login-btn:disabled {
@@ -129,21 +164,23 @@
 
         /* Main App */
         .app-container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: var(--bg-dark);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             max-width: 1200px;
             width: 100%;
-            min-height: 600px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            border: 1px solid var(--border);
         }
 
         .app-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1a0f 100%);
             color: white;
-            padding: 30px 40px;
-            border-radius: 20px 20px 0 0;
+            padding: 24px 20px;
+            border-radius: 24px 24px 0 0;
+            border-bottom: 1px solid var(--border);
         }
 
         .header-top {
@@ -190,20 +227,25 @@
         }
 
         .how-to-btn {
-            background: #48bb78;
+            background: var(--primary);
             color: white !important;
             border: none;
-            padding: 10px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+        }
+
+        .how-to-btn svg {
+            width: 18px;
+            height: 18px;
         }
 
         .how-to-btn span {
@@ -211,9 +253,9 @@
         }
 
         .how-to-btn:hover {
-            background: #38a169;
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
             color: white !important;
         }
 
@@ -225,7 +267,7 @@
         }
 
         .progress-fill {
-            background: white;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
             height: 100%;
             transition: width 0.5s ease;
             border-radius: 4px;
@@ -234,49 +276,87 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 12px;
             margin-top: 20px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 15px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .stat-icon svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
         }
 
         .stat-label {
-            font-size: 12px;
-            opacity: 0.9;
-            margin-bottom: 8px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
         .stat-value {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 800;
+            color: #fff;
         }
 
         .tabs {
             display: flex;
             gap: 8px;
-            padding: 20px 40px;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
             align-items: center;
+            overflow-x: auto;
+            background: var(--bg-dark);
         }
 
         .tab {
-            padding: 10px 24px;
+            padding: 12px 20px;
             border: none;
             background: transparent;
-            color: #718096;
+            color: var(--text-secondary);
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .tab svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
         }
 
         .tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             color: white;
         }
 
@@ -304,27 +384,28 @@
 
         .content {
             flex: 1;
-            padding: 40px;
+            padding: 20px;
             overflow-y: auto;
+            background: var(--bg-dark);
         }
 
         .modules-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .module-card {
-            background: white;
-            border: 2px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
+            padding: 20px;
+            transition: all 0.2s ease;
         }
 
         .module-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+            border-color: var(--primary);
+            background: rgba(34, 197, 94, 0.05);
         }
 
         .module-content {
@@ -342,24 +423,29 @@
         }
 
         .module-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             flex-shrink: 0;
         }
 
+        .module-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
         .module-icon.available {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
         }
 
         .module-icon.completed {
-            background: #48bb78;
+            background: var(--primary);
             color: white;
         }
 
@@ -368,23 +454,35 @@
         }
 
         .module-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+            line-height: 1.4;
         }
 
         .module-subtitle {
-            color: #718096;
-            font-size: 14px;
+            color: var(--text-secondary);
+            font-size: 13px;
             margin-bottom: 8px;
         }
 
         .module-meta {
             display: flex;
             gap: 16px;
-            font-size: 13px;
-            color: #a0aec0;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .module-time {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .module-time svg {
+            width: 14px;
+            height: 14px;
         }
 
         .module-right {
@@ -397,23 +495,40 @@
         .module-status {
             font-size: 12px;
             font-weight: 600;
-            color: #48bb78;
+            color: var(--primary);
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .module-status svg {
+            width: 14px;
+            height: 14px;
         }
 
         .module-btn {
-            padding: 10px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px 24px;
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .module-btn svg {
+            width: 18px;
+            height: 18px;
         }
 
         .module-btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
@@ -424,7 +539,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: white;
+            background: var(--bg-dark);
             z-index: 1000;
             overflow-y: auto;
             transform: translateX(100%);
@@ -436,25 +551,38 @@
         }
 
         .lesson-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1a0f 100%);
             color: white;
-            padding: 30px 40px;
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .back-btn {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
-            margin-bottom: 20px;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn svg {
+            width: 18px;
+            height: 18px;
         }
 
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .lesson-title-row {
@@ -472,43 +600,54 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
         }
 
+        .lesson-badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+
+        .lesson-badge.completed {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
         .lesson-body {
-            padding: 40px;
-            max-width: 900px;
+            padding: 24px 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .lesson-section {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1a202c;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
             margin-bottom: 12px;
         }
 
         .section-title.red {
-            color: #dc2626;
+            color: var(--red);
         }
 
         .section-title.green {
-            color: #16a34a;
+            color: var(--primary);
         }
 
         .section-title.blue {
-            color: #2563eb;
+            color: var(--blue);
         }
 
         .section-content {
-            color: #4a5568;
+            color: var(--text-secondary);
             line-height: 1.8;
             font-size: 15px;
         }
@@ -518,75 +657,131 @@
         }
 
         .homework-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: white !important;
-            background: #2563eb;
+            background: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            padding: 12px 24px;
-            border: 2px solid #2563eb;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .homework-link svg {
+            width: 20px;
+            height: 20px;
         }
 
         .homework-link:hover {
-            background: #1d4ed8;
-            border-color: #1d4ed8;
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
             color: white !important;
         }
 
+        .homework-link.blue {
+            background: var(--blue);
+        }
+
+        .homework-link.blue:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
         .homework-section {
-            background: #f7fafc;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
             padding: 24px;
-            border-radius: 12px;
+            border-radius: 16px;
             margin-top: 32px;
         }
 
         .result-title {
             font-size: 16px;
-            font-weight: 600;
-            color: #2563eb;
+            font-weight: 700;
+            color: var(--primary);
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .result-title svg {
+            width: 20px;
+            height: 20px;
         }
 
         .homework-textarea {
             width: 100%;
-            min-height: 120px;
+            min-height: 140px;
             padding: 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 15px;
             font-family: inherit;
             resize: vertical;
-            transition: border-color 0.3s ease;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
+        }
+
+        .homework-textarea::placeholder {
+            color: var(--text-gray);
         }
 
         .homework-textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--primary);
+            background: rgba(34, 197, 94, 0.05);
         }
 
         .homework-status {
             font-size: 13px;
-            color: #718096;
-            margin-top: 8px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .homework-status svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .homework-status.ready,
+        .homework-status.completed {
+            color: var(--primary);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            padding: 16px;
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             margin-top: 16px;
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn svg {
+            width: 22px;
+            height: 22px;
         }
 
         .submit-btn:hover:not(:disabled) {
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
@@ -599,16 +794,25 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #48bb78;
+            background: var(--primary);
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 600;
             opacity: 0;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .saving-indicator svg {
+            width: 18px;
+            height: 18px;
+            animation: spin 1s linear infinite;
         }
 
         .saving-indicator.show {
@@ -617,16 +821,55 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .app-container {
+                border-radius: 0;
+                border: none;
+                min-height: 100vh;
+            }
+
             .app-header {
-                padding: 20px;
+                padding: 16px;
+                border-radius: 0;
             }
 
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 12px 8px;
+            }
+
+            .stat-icon {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 8px;
+            }
+
+            .stat-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .stat-value {
+                font-size: 20px;
+            }
+
+            .stat-label {
+                font-size: 9px;
             }
 
             .content {
-                padding: 20px;
+                padding: 16px;
+            }
+
+            .module-card {
+                padding: 16px;
             }
 
             .module-content {
@@ -634,19 +877,46 @@
                 align-items: flex-start;
             }
 
+            .module-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+
+            .module-title {
+                font-size: 14px;
+            }
+
+            .module-subtitle {
+                font-size: 12px;
+            }
+
             .module-right {
                 width: 100%;
                 align-items: stretch;
+                margin-top: 12px;
+            }
+
+            .module-btn {
+                justify-content: center;
+            }
+
+            .lesson-header {
+                padding: 16px;
+            }
+
+            .lesson-title {
+                font-size: 18px;
             }
 
             .lesson-body {
-                padding: 20px;
+                padding: 20px 16px;
             }
 
             .header-top {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+                gap: 12px;
             }
 
             .user-info {
@@ -656,13 +926,38 @@
             }
 
             .how-to-btn {
-                width: 100%;
+                flex: 1;
                 justify-content: center;
                 font-size: 13px;
             }
 
+            .logout-btn {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
             .tabs {
-                flex-wrap: wrap;
+                padding: 12px 16px;
+            }
+
+            .tab {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .support-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .homework-section {
+                padding: 20px 16px;
+            }
+
+            .homework-link {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
             }
 
             .support-btn {
@@ -678,24 +973,33 @@
     <!-- Login Screen -->
     <div id="login-screen" class="login-container">
         <div class="login-header">
-            <h1 id="login-title">Архітектура Бізнесу</h1>
-            <p id="login-subtitle">Увійдіть до вашого акаунта</p>
+            <div class="login-logo">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h1 id="login-title">TALKO System</h1>
+            <p id="login-subtitle">Увійдіть до навчальної платформи</p>
         </div>
 
-        <div id="login-error" class="error-message hidden"></div>
+        <div id="login-error" class="error-message hidden">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="login-error-text"></span>
+        </div>
 
         <form id="login-form">
             <div class="form-group">
                 <label id="email-label" for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" required placeholder="your@email.com">
             </div>
 
             <div class="form-group">
                 <label id="password-label" for="password">Пароль</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" required placeholder="••••••••">
             </div>
 
-            <button type="submit" id="login-btn" class="login-btn">Увійти</button>
+            <button type="submit" id="login-btn" class="login-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                <span>Увійти</span>
+            </button>
         </form>
     </div>
 
@@ -705,16 +1009,25 @@
         <div id="dashboard">
             <div class="app-header">
                 <div class="header-top">
-                    <div class="header-title">
-                        <h1 id="header-title">Архітектура Бізнесу</h1>
-                        <p id="welcome-subtitle">Talko Management System • 15 модулів • 280 хвилин</p>
+                    <div class="header-title" style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 44px; height: 44px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: var(--bg-dark);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <h1 id="header-title" style="font-size: 20px; font-weight: 700;">TALKO System</h1>
+                            <p id="welcome-subtitle" style="font-size: 12px; color: var(--text-secondary);">15 модулів • 280 хвилин</p>
+                        </div>
                     </div>
                     <div class="user-info">
                         <a href="https://youtu.be/40xtU79JbDA" target="_blank" class="how-to-btn" title="Як проходити навчання">
-                            <span>Як проходити навчання - натисніть сюди</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+                            <span>Як навчатись</span>
                         </a>
                         <span id="user-email" class="user-email"></span>
-                        <button id="logout-btn" class="logout-btn">Вихід</button>
+                        <button id="logout-btn" class="logout-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                            <span>Вихід</span>
+                        </button>
                     </div>
                 </div>
 
@@ -724,24 +1037,42 @@
 
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-label" id="progress-label">Прогрес курсу</div>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                        </div>
+                        <div class="stat-label" id="progress-label">Прогрес</div>
                         <div class="stat-value" id="progress-percent">0%</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label" id="completed-label">Завершених модулів</div>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="stat-label" id="completed-label">Завершено</div>
                         <div class="stat-value" id="completed-modules">0/15</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label" id="time-label">Часу навчання (хв)</div>
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="stat-label" id="time-label">Хвилин</div>
                         <div class="stat-value" id="total-time">0</div>
                     </div>
                 </div>
             </div>
 
             <div class="tabs">
-                <button class="tab active" id="modules-tab">Модулі</button>
-                <button class="tab" id="ai-tab">AI-Асистенти</button>
-                <a href="https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e" target="_blank" class="support-btn">Підтримка</a>
+                <button class="tab active" id="modules-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <span>Модулі</span>
+                </button>
+                <button class="tab" id="ai-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+                    <span>AI-Асистенти</span>
+                </button>
+                <a href="https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e" target="_blank" class="support-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <span>Підтримка</span>
+                </a>
             </div>
 
             <div class="content">
@@ -752,11 +1083,14 @@
         <!-- Module Detail -->
         <div id="module-detail" class="module-detail">
             <div class="lesson-header">
-                <button id="back-btn" class="back-btn" onclick="showDashboard()">← Назад до модулів</button>
+                <button id="back-btn" class="back-btn" onclick="showDashboard()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    <span>Назад</span>
+                </button>
                 <div class="lesson-title-row">
                     <h1 id="lesson-title" class="lesson-title"></h1>
-                    <div class="lesson-badge">
-                        <span id="lesson-icon">TIME</span>
+                    <div class="lesson-badge" id="lesson-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         <span id="lesson-time"></span>
                     </div>
                 </div>
@@ -767,19 +1101,31 @@
 
                 <div class="homework-section">
                     <div id="lesson-result">
-                        <h3 class="result-title" id="result-title">РЕЗУЛЬТАТ РОБОТИ:</h3>
+                        <h3 class="result-title" id="result-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            РЕЗУЛЬТАТ РОБОТИ:
+                        </h3>
                         <p id="result-text" class="section-content" style="margin-bottom: 16px;"></p>
                     </div>
                     
-                    <textarea id="homework-textarea" class="homework-textarea" placeholder="[Поле для вставки тексту]"></textarea>
-                    <div class="homework-status" id="homework-status">Заповніть поле для завершення уроку</div>
-                    <button id="submit-btn" class="submit-btn" onclick="submitHomework()">Завершити урок</button>
+                    <textarea id="homework-textarea" class="homework-textarea" placeholder="Вставте посилання на Google Документ..."></textarea>
+                    <div class="homework-status" id="homework-status">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span>Заповніть поле для завершення</span>
+                    </div>
+                    <button id="submit-btn" class="submit-btn" onclick="submitHomework()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>Завершити урок</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="saving-indicator" class="saving-indicator">Збереження...</div>
+    <div id="saving-indicator" class="saving-indicator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+        <span>Збереження...</span>
+    </div>
 
     <!-- Firebase SDK -->
     <script type="module">
