@@ -248,35 +248,37 @@
         }
 
         .how-to-btn {
-            background: rgba(255,255,255,0.2);
-            color: white !important;
-            border: 2px solid rgba(255,255,255,0.3);
+            background: white;
+            color: var(--primary-dark) !important;
+            border: none;
             padding: 10px 20px;
             border-radius: 10px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .how-to-btn svg {
             width: 18px;
             height: 18px;
+            color: var(--primary-dark);
         }
 
         .how-to-btn span {
-            color: white !important;
+            color: var(--primary-dark) !important;
         }
 
         .how-to-btn:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
+            background: #f0fdf4;
             transform: translateY(-1px);
-            color: white !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            color: var(--primary-dark) !important;
         }
 
         .progress-bar {
@@ -1480,36 +1482,82 @@
                 materialsLink: "https://drive.google.com/drive/folders/11YOxCa-m983F_Qkg7ka4IQzq7mpzqAm1?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Суть уроку</h3>
-    <p style="color: #374151; line-height: 1.7;">Спочатку потрібно розібратись із ключовими термінами та зрозуміти, як працює технологія навчання. Це дозволить швидше засвоювати матеріал і мислити системно.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Суть уроку</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Перш ніж будувати систему — потрібно говорити однією мовою. Коли ви кажете "функція", а співробітник розуміє "задача" — виникає хаос.</p>
+        <p style="margin-top: 12px;"><strong>Без єдиної термінології:</strong></p>
+        <ul>
+            <li>Ви просите "результат" — вам приносять "звіт про активність"</li>
+            <li>Ви питаєте "скільки заробили" — вам кажуть "скільки дзвінків зробили"</li>
+            <li>Неможливо делегувати, контролювати, масштабуватись</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 1. Створіть робочу папку</h3>
-    <p style="color: #374151; line-height: 1.7;"><strong>Назва:</strong> СИСТЕМАТИЗАЦІЯ TALKO<br>Зберігайте там усі матеріали й домашні завдання.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Створіть робочу папку</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Назва:</strong> СИСТЕМАТИЗАЦІЯ TALKO</p>
+        <p>Зберігайте тут всі матеріали та домашні завдання курсу.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 2. Пройдіть вступного асистента</h3>
-    <p style="color: #374151; line-height: 1.7;">Асистент допоможе розібратись з термінами та створити ваш особистий словник.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Пройдіть AI-асистента термінології</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Асистент працює в 2 режимах:</p>
+        <ul>
+            <li><strong>Режим НАВЧАННЯ</strong> — проведе вас через 13 ключових понять з прикладами саме для вашої ніші</li>
+            <li><strong>Режим КОНСУЛЬТАЦІЇ</strong> — ви описуєте ситуацію зі свого бізнесу, асистент "перекладає" її в правильну управлінську мову</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 3. Завантажте матеріали</h3>
-    <p style="color: #374151; line-height: 1.7;">Всі необхідні файли та шаблони для роботи.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 3. Завантажте матеріали</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Всі необхідні файли та шаблони для роботи.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройти асистента</li>
-        <li>Виписати 20 ключових термінів</li>
-        <li>Додати їх у документ у своїй папці</li>
-        <li>Прикріпити посилання на виконане ДЗ у Google-документі</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройти асистента в режимі навчання</li>
+            <li>Виписати 20 ключових термінів з визначеннями</li>
+            <li>Додати їх у Google-документ у своїй папці</li>
+            <li>Прикріпити посилання на документ</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
@@ -1526,41 +1574,129 @@
                 materialsLink: "https://drive.google.com/drive/folders/1BNSRJePCQG0UgcFC399GQcAInS44YZvJ?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Суть уроку</h3>
-    <p style="color: #374151; line-height: 1.7;">Система розпоряджень — це основа управління через завдання, а не через нагадування. Вона формує мислення "керую через інструкцію і результат", а не "вирішую все вручну".</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Суть уроку</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Чому люди не виконують завдання як слід? Бо ви нечітко формулюєте. "Забезпечити порядок" — це що конкретно? "До кінця дня" — це 14:00 чи 20:00?</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 1. Пройдіть асистента</h3>
-    <p style="color: #374151; line-height: 1.7;">Задайте питання:</p>
-    <ul style="color: #374151; line-height: 1.7; padding-left: 1.5rem; margin-top: 0.5rem;">
-        <li>для чого потрібна система розпоряджень;</li>
-        <li>як змінюється мислення співробітника;</li>
-        <li>створіть приклад свого першого розпорядження.</li>
-    </ul>
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">Без чітких розпоряджень</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Підлеглі постійно перепитують "а що конкретно робити?"</li>
+            <li>Завдання переробляються по 3-4 рази</li>
+            <li>Ви витрачаєте 15 хвилин на пояснення замість 30 секунд</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 2. Відкрийте папку матеріалів</h3>
-    <p style="color: #374151; line-height: 1.7;">У папці ви знайдете <strong>шаблон таблиці розпоряджень</strong> та <strong>приклад заповнення</strong>. Почніть фіксувати всі розпорядження у своїй копії таблиці.</p>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Що дає правильне розпорядження</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Працівник розуміє ЩО, ДО КОЛИ і ЯК зробити</li>
+            <li>Все виконується з першого разу</li>
+            <li>Контроль, прозорість, порядок</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 3. Ознайомтесь із відео</h3>
-    <p style="color: #374151; line-height: 1.7;">Подивіться приклад, як правильно формулювати розпорядження і вносити його у таблицю.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Подивіться відео</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Розбір системи розпоряджень з реальними прикладами.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Завантажте матеріали</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Шаблони та приклади правильних розпоряджень.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 3. Генератор розпоряджень</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Цей інструмент ви будете використовувати <strong>постійно</strong>. Перед тим як дати будь-яке завдання — закиньте його в генератор. За 30 секунд отримаєте чітке розпорядження.</p>
+        <p style="margin-top: 12px;"><strong>Як працювати:</strong></p>
+        <ol>
+            <li>Опишіть завдання своїми словами</li>
+            <li>Асистент переформулює його в правильний формат</li>
+            <li>Скопіюйте та відправте виконавцю</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 4. Познайомтесь з TALKO Task Manager</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Це платформа для управління завданнями, яку ми будемо використовувати далі в курсі.</p>
+        <p style="margin-top: 8px;">Зайдіть в асистента підтримки та задайте йому питання: як він працює, які проблеми допоможе вирішити, як почати користуватись.</p>
+        <div style="margin-top: 16px;">
+            <a href="https://chatgpt.com/g/g-69382bfa841881918aff7b50aa25a4f9-talko-task-manager-support" target="_blank" class="action-btn outline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+                TALKO Task Manager Support
+            </a>
+        </div>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройти асистента</li>
-        <li>Створити власну таблицю розпоряджень у своїй папці</li>
-        <li>Додати туди 2–3 реальні розпорядження</li>
-        <li>Прикріпити посилання на Google-документ із таблицею</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Створіть таблицю розпоряджень (шаблон у матеріалах)</li>
+            <li>Згенеруйте через асистента 2-3 реальні розпорядження</li>
+            <li>Додайте їх у таблицю</li>
+            <li>Поспілкуйтесь з асистентом TALKO Task Manager</li>
+            <li>Прикріпіть посилання на таблицю</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
@@ -1570,47 +1706,124 @@
             },
             {
                 id: 3,
-                title: "АСИСТЕНТ \"РАДАР\" — ПЕРЕХІД ВІД ПРОБЛЕМ ДО РІШЕНЬ",
+                title: "СИСТЕМА РАДАР",
                 subtitle: "Як проходити урок: переглянути відео",
                 
                 videoLink: "https://youtu.be/hmx-BC49qJc",
                 materialsLink: "https://drive.google.com/drive/folders/1z1vFSjzGNb-RYd2WdB3TxwmMb9CKN5vG?usp=sharing",
                 
                 lessonContent: `
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">● Суть уроку</h3>
-    <p style="color: #374151; line-height: 1.7;">Асистент <strong>"Радар"</strong> навчає співробітників приходити не з проблемою, а з рішенням. Це формує культуру самостійності, ініціативи та відповідальності, коли команда мислить як управлінці, а не виконавці.</p>
+<div class="lesson-block intro">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
+        <div class="lesson-block-title">Суть уроку</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Коли співробітник приходить до вас з питанням "Що робити?" — він перекладає свою роботу на вас. Правильний підхід: співробітник приходить з <strong>готовим рішенням</strong>, а ви тільки погоджуєте.</p>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 1. Пройдіть асистента</h3>
-    <p style="color: #374151; line-height: 1.7;">Пройдіть спілкування з асистентом, щоб зрозуміти, як він мислить, які запитання ставить і як допомагає формувати рішення.</p>
+<div class="lesson-block warning">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="lesson-block-title">Типова проблема</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Співробітник ставить питання без готової пропозиції</li>
+            <li>Формулює ідею нечітко — отримує "відбій"</li>
+            <li>Сумнівається, що саме запропонувати</li>
+            <li>Ви витрачаєте час на обдумування замість нього</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 2. Передайте асистента команді</h3>
-    <p style="color: #374151; line-height: 1.7;">Надайте посилання своїм співробітникам. Коли у них виникає питання чи складна ситуація — вони спершу проходять асистента, а потім звертаються до вас <strong>із службовою запискою та ініціативою вирішення</strong>, а не зі скаргою.</p>
+<div class="lesson-block success">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="lesson-block-title">Що дає система РАДАР</div>
+    </div>
+    <div class="lesson-block-content">
+        <ul>
+            <li>Співробітник сам аналізує ситуацію</li>
+            <li>Готує 3 варіанти рішення з плюсами/мінусами</li>
+            <li>Пропонує оптимальний варіант</li>
+            <li>Ви тільки кажете "так" або "ні"</li>
+        </ul>
+    </div>
 </div>
 
-<div style="margin-bottom: 1.5rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">► КРОК 3. Фіксуйте ініціативи</h3>
-    <p style="color: #374151; line-height: 1.7;">Усі службові записки та ініціативи заносьте в <strong>таблицю розпоряджень</strong> (з попереднього уроку) — це дозволяє бачити, хто і як пропонує рішення.</p>
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 1. Подивіться відео</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Розбір системи РАДАР з реальними прикладами.</p>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 2. Розберіться з AI-асистентом РАДАР</div>
+    </div>
+    <div class="lesson-block-content">
+        <p>Цей інструмент — <strong>для ваших співробітників</strong>. Розберіться самі, як він працює, а потім дайте посилання команді.</p>
+        <p style="margin-top: 12px;"><strong>Як працює:</strong></p>
+        <ol>
+            <li>Співробітник описує ситуацію</li>
+            <li>Асистент запитує деталі та дані</li>
+            <li>Формує 3 варіанти рішення</li>
+            <li>Готує оформлену пропозицію для керівника</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="lesson-block-title">КРОК 3. Передайте посилання команді</div>
+    </div>
+    <div class="lesson-block-content">
+        <p><strong>Правило:</strong> Тепер кожного разу, коли у співробітника питання — він спочатку звертається до цього асистента, а потім приходить до вас з готовим рішенням.</p>
+    </div>
 </div>
                 `,
                 
                 homework: `
-<div style="margin-bottom: 1rem;">
-    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; color: #2563eb;">■ Домашнє завдання:</h3>
-    <ol style="color: #374151; line-height: 1.7; padding-left: 1.5rem;">
-        <li>Пройти асистента "Радар"</li>
-        <li>Надіслати посилання команді</li>
-        <li>Додати 1–2 ініціативи співробітників у таблицю розпоряджень</li>
-    </ol>
+<div class="lesson-block homework">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        </div>
+        <div class="lesson-block-title">Домашнє завдання</div>
+    </div>
+    <div class="lesson-block-content">
+        <ol>
+            <li>Пройдіть асистента самі — змоделюйте будь-яку робочу ситуацію</li>
+            <li>Скопіюйте посилання на асистента</li>
+            <li>Відправте 2-3 співробітникам з інструкцією: "Тепер перед тим як підходити з питанням — спочатку сюди"</li>
+            <li>Прикріпіть посилання на документ з описом впровадження</li>
+        </ol>
+    </div>
 </div>
                 `,
                 
-                homeworkLink: "https://chatgpt.com/g/g-684bb075301481918669f787231e1af7-radar-pomichnik-ai-alex-talko",
-                homeworkLinkName: "→ Радар-помічник",
+                homeworkLink: "https://chatgpt.com/g/g-6839077fc8f48191b6e7a5bd9d832063-ai-alex-talko-radar-zrs",
+                homeworkLinkName: "→ AI-асистент РАДАР",
                 time: 15
             },
             {
@@ -2542,7 +2755,6 @@
             currentModule = module;
             
             document.getElementById('lesson-title').textContent = `УРОК ${module.id}: ${module.title}`;
-            document.getElementById('lesson-time').textContent = `${module.time} хв`;
             
             // Update lesson badge
             const lessonBadge = document.getElementById('lesson-badge');
