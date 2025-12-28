@@ -1269,6 +1269,20 @@
                 margin-top: 8px;
             }
         }
+        
+        /* Accordion styles */
+        details.accordion-article summary::-webkit-details-marker {
+            display: none;
+        }
+        details.accordion-article summary {
+            list-style: none;
+        }
+        details.accordion-article[open] .accordion-arrow {
+            transform: rotate(90deg);
+        }
+        details.accordion-article summary:hover {
+            background: #f3f4f6;
+        }
     </style>
 </head>
 <body>
@@ -2532,16 +2546,96 @@
         <div class="lesson-block-title">«Ой всьо…» — чому співробітники чинять опір?</div>
     </div>
     <div class="lesson-block-content">
-        <p>Ви спокійно кажете: «Тут треба підучитися» — а у відповідь кисле лице, образа, пасивна агресія, мінімум дій.</p>
-        <p style="margin-top: 12px;"><strong>Причини:</strong></p>
-        <ul>
-            <li><strong>Плутають поради з нападом</strong> — будь-яка ремарка = удар по самооцінці</li>
-            <li><strong>Не розрізняють "я" і "мою дію"</strong> — "ти зробив помилку" сприймається як "ти — помилка"</li>
-            <li><strong>Образа = спосіб уникнути відповідальності</strong> — образився → став "жертвою" → нічого не зобов'язаний</li>
-            <li><strong>Критика змушує дорослішати</strong> — визнати реальність, змінити поведінку, взяти відповідальність. Це боляче.</li>
-            <li><strong>Токсична установка "я вже маю знати"</strong> — будь-яка порада = доказ слабкості</li>
-        </ul>
-        <p style="margin-top: 12px; padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;"><strong>Гола правда:</strong> Не кожен співробітник може працювати в компанії зі стандартами та регламентами. Компанія росте — не всі люди ростуть разом із нею.</p>
+        <div style="padding: 12px 16px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 16px;">
+            <p style="margin: 0;"><strong>Рекомендація:</strong> Якщо співробітник проявляє опір, образу або пасивну агресію — прочитайте цю статтю разом з ним. Нехай співробітник читає вголос.</p>
+        </div>
+        
+        <details class="accordion-article" style="border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px; background: #f9fafb; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; list-style: none;">
+                <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; transition: transform 0.2s;"><polyline points="9 18 15 12 9 6"/></svg>
+                Стаття: «Ой всьо…» або чому ваші співробітники не сприймають критику
+            </summary>
+            <div style="padding: 20px; background: white;">
+                <h4 style="color: #dc2626; margin-bottom: 16px;">Знайома сцена?</h4>
+                <p style="margin-bottom: 16px;">Ви спокійно кажете людині: «Ось тут треба підучитися. Ось так робити правильно».</p>
+                <p style="margin-bottom: 16px;">І що у відповідь?</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>кисле лице</li>
+                    <li>образа</li>
+                    <li>пасивна агресія</li>
+                    <li>"ой всьо, я поняв(ла)"</li>
+                    <li>мінімум дій, максимум емоцій</li>
+                </ul>
+                <p style="margin-bottom: 20px;">Хоча ви навіть не кричали.</p>
+                
+                <div style="padding: 16px; background: #fef2f2; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="margin: 0; font-weight: 600;">Тут важливо зрозуміти одну неприємну річ:</p>
+                    <p style="margin: 8px 0 0 0;">Більшість дорослих працює з психікою 12-річної дитини.<br>Виглядає 30+. Працює 20+. А реагує як школяр, якому вчитель сказав: "Треба підтягнути математику."</p>
+                </div>
+                
+                <h4 style="margin-bottom: 12px;">Чому так?</h4>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">1. Бо вони плутають поради з нападом</p>
+                    <p style="margin-bottom: 4px;"><strong>Доросла людина:</strong> "Я можу краще — дякую за уточнення."</p>
+                    <p style="margin: 0;"><strong>Дитяча людина:</strong> "Ти сказав, що я поганий. Ой всьо."</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">2. Бо самооцінка крихка, як пластиковий стаканчик</p>
+                    <p style="margin: 0;">Будь-яка ремарка = удар по «я хороший». Не витримує навіть легкий натяк, що щось можна зробити інакше. Слабка внутрішня опора → сильні зовнішні реакції.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">3. Бо їх ніхто не навчив розрізняти "я" і "мою дію"</p>
+                    <p style="margin: 0;">"Ти зробив помилку" сприймається як "Ти — помилка." Людина з такою логікою приречена ображатися.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">4. Бо критика змушує дорослішати — а цього вони бояться</p>
+                    <p style="margin-bottom: 8px;">Критика означає:</p>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>визнати реальність</li>
+                        <li>змінити поведінку</li>
+                        <li>взяти відповідальність</li>
+                    </ul>
+                    <p style="margin: 8px 0 0 0;">Це боляче. Це дискомфортно. Це не дитяча модель. Тому включається: «ой всьо, я нічого не знаю, робіть самі»</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">5. Бо є глибока установка "я вже маю знати"</p>
+                    <p style="margin: 0;">Дуже токсична. Якщо людина вірить, що вона повинна все вміти — то будь-яка порада = доказ слабкості. Не порадить — погано. Порада — теж погано. Парадокс інфантильності.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">6. Бо образа — це спосіб уникнути відповідальності</p>
+                    <p style="margin: 0;">Коли працівник ображається, він знімає з себе вантаж дії. Образився → значить, він "жертва", а не виконавець. А жертва нічого не зобов'язана. Зручно. Неефективно. І дуже дорого для бізнесу.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">7. Бо ви говорите по-дорослому, а в них — дитячий фільтр</p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Треба зробити ось так."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Їхнє:</strong> "Мене принизили."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Виправ помилку."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Їхнє:</strong> "Мене не цінують."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Потрібно навчатися."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Їхнє:</strong> "Я недостатній."</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div style="padding: 16px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <p style="font-weight: 600; margin-bottom: 8px;">Гола правда</p>
+                    <p style="margin: 0;">Не кожен працівник може працювати в компанії, де є стандарти, регламенти, інструкції і чіткі вимоги. Не тому, що вони «погані». А тому що їх психіка ще не доросла до професійної ролі. <strong>Компанія росте — не всі люди ростуть разом із нею.</strong></p>
+                </div>
+            </div>
+        </details>
     </div>
 </div>
 
@@ -2856,16 +2950,96 @@
         <div class="lesson-block-title">«Ой всё…» — почему сотрудники сопротивляются?</div>
     </div>
     <div class="lesson-block-content">
-        <p>Вы спокойно говорите: «Тут надо подучиться» — а в ответ кислое лицо, обида, пассивная агрессия.</p>
-        <p style="margin-top: 12px;"><strong>Причины:</strong></p>
-        <ul>
-            <li><strong>Путают советы с нападением</strong> — любое замечание = удар по самооценке</li>
-            <li><strong>Не различают "я" и "моё действие"</strong> — "ты сделал ошибку" воспринимается как "ты — ошибка"</li>
-            <li><strong>Обида = способ избежать ответственности</strong></li>
-            <li><strong>Критика заставляет взрослеть</strong> — признать реальность, изменить поведение</li>
-            <li><strong>Токсичная установка "я уже должен знать"</strong> — любой совет = доказательство слабости</li>
-        </ul>
-        <p style="margin-top: 12px; padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;"><strong>Голая правда:</strong> Не каждый сотрудник может работать в компании со стандартами и регламентами. Компания растёт — не все люди растут вместе с ней.</p>
+        <div style="padding: 12px 16px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 16px;">
+            <p style="margin: 0;"><strong>Рекомендация:</strong> Если сотрудник проявляет сопротивление, обиду или пассивную агрессию — прочитайте эту статью вместе с ним. Пусть сотрудник читает вслух.</p>
+        </div>
+        
+        <details class="accordion-article" style="border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px; background: #f9fafb; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; list-style: none;">
+                <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; transition: transform 0.2s;"><polyline points="9 18 15 12 9 6"/></svg>
+                Статья: «Ой всё…» или почему ваши сотрудники не воспринимают критику
+            </summary>
+            <div style="padding: 20px; background: white;">
+                <h4 style="color: #dc2626; margin-bottom: 16px;">Знакомая сцена?</h4>
+                <p style="margin-bottom: 16px;">Вы спокойно говорите человеку: «Вот тут надо подучиться. Вот так делать правильно».</p>
+                <p style="margin-bottom: 16px;">И что в ответ?</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>кислое лицо</li>
+                    <li>обида</li>
+                    <li>пассивная агрессия</li>
+                    <li>"ой всё, я понял(а)"</li>
+                    <li>минимум действий, максимум эмоций</li>
+                </ul>
+                <p style="margin-bottom: 20px;">Хотя вы даже не кричали.</p>
+                
+                <div style="padding: 16px; background: #fef2f2; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="margin: 0; font-weight: 600;">Тут важно понять одну неприятную вещь:</p>
+                    <p style="margin: 8px 0 0 0;">Большинство взрослых работает с психикой 12-летнего ребёнка.<br>Выглядит 30+. Работает 20+. А реагирует как школьник, которому учитель сказал: "Надо подтянуть математику."</p>
+                </div>
+                
+                <h4 style="margin-bottom: 12px;">Почему так?</h4>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">1. Потому что они путают советы с нападением</p>
+                    <p style="margin-bottom: 4px;"><strong>Взрослый человек:</strong> "Я могу лучше — спасибо за уточнение."</p>
+                    <p style="margin: 0;"><strong>Детский человек:</strong> "Ты сказал, что я плохой. Ой всё."</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">2. Потому что самооценка хрупкая, как пластиковый стаканчик</p>
+                    <p style="margin: 0;">Любое замечание = удар по «я хороший». Не выдерживает даже лёгкий намёк, что что-то можно сделать иначе. Слабая внутренняя опора → сильные внешние реакции.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">3. Потому что их никто не научил различать "я" и "моё действие"</p>
+                    <p style="margin: 0;">"Ты сделал ошибку" воспринимается как "Ты — ошибка." Человек с такой логикой обречён обижаться.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">4. Потому что критика заставляет взрослеть — а этого они боятся</p>
+                    <p style="margin-bottom: 8px;">Критика означает:</p>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>признать реальность</li>
+                        <li>изменить поведение</li>
+                        <li>взять ответственность</li>
+                    </ul>
+                    <p style="margin: 8px 0 0 0;">Это больно. Это дискомфортно. Это не детская модель. Поэтому включается: «ой всё, я ничего не знаю, делайте сами»</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">5. Потому что есть глубокая установка "я уже должен знать"</p>
+                    <p style="margin: 0;">Очень токсичная. Если человек верит, что он должен всё уметь — то любой совет = доказательство слабости. Не посоветуешь — плохо. Совет — тоже плохо. Парадокс инфантильности.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">6. Потому что обида — это способ избежать ответственности</p>
+                    <p style="margin: 0;">Когда работник обижается, он снимает с себя груз действия. Обиделся → значит, он "жертва", а не исполнитель. А жертва ничего не обязана. Удобно. Неэффективно. И очень дорого для бизнеса.</p>
+                </div>
+                
+                <div style="padding: 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #dc2626; margin-bottom: 8px;">7. Потому что вы говорите по-взрослому, а у них — детский фильтр</p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Надо сделать вот так."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Их:</strong> "Меня унизили."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Исправь ошибку."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Их:</strong> "Меня не ценят."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Ваше:</strong> "Нужно учиться."</td>
+                            <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>Их:</strong> "Я недостаточный."</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div style="padding: 16px; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <p style="font-weight: 600; margin-bottom: 8px;">Голая правда</p>
+                    <p style="margin: 0;">Не каждый работник может работать в компании, где есть стандарты, регламенты, инструкции и чёткие требования. Не потому, что они «плохие». А потому что их психика ещё не доросла до профессиональной роли. <strong>Компания растёт — не все люди растут вместе с ней.</strong></p>
+                </div>
+            </div>
+        </details>
     </div>
 </div>
 
