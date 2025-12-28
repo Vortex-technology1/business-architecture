@@ -5313,8 +5313,8 @@
             updateLanguage();
         }
 
-        // How to learn popup for RU version
-        function showHowToLearn() {
+        // How to learn popup for RU version - make global for onclick
+        window.showHowToLearn = function() {
             if (currentLang === 'ru') {
                 document.getElementById('how-to-popup').style.display = 'flex';
             } else {
@@ -5322,7 +5322,7 @@
             }
         }
         
-        function closeHowToPopup() {
+        window.closeHowToPopup = function() {
             document.getElementById('how-to-popup').style.display = 'none';
         }
 
