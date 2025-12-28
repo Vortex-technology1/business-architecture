@@ -1392,7 +1392,7 @@
                 </button>
                 <a href="https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e" target="_blank" class="support-btn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    <span>Підтримка</span>
+                    <span id="support-text">Підтримка</span>
                 </a>
             </div>
 
@@ -4845,7 +4845,7 @@
             // Tabs
             document.querySelector('#modules-tab span').textContent = t.modulesTab;
             document.querySelector('#ai-tab span').textContent = t.aiTab;
-            document.querySelector('.support-btn span').textContent = t.support;
+            document.getElementById('support-text').textContent = t.support;
             
             // Back button
             document.querySelector('#back-btn span').textContent = t.backBtn.replace('← ', '');
