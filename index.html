@@ -3920,8 +3920,8 @@
                 subtitle: "Вимірювання продукту та щотижневий аналіз",
                 subtitle_ru: "Измерение продукта и еженедельный анализ",
                 
-                videoLink: "https://youtu.be/wpuey2Ivui0",
-                materialsLink: "https://drive.google.com/drive/folders/1fMZmQCXqGjfNEZoF34GD9Okqz1aMVrpF?usp=sharing",
+                videoLink: null,
+                materialsLink: null,
                 
                 lessonContent: `
 <div class="lesson-block intro">
@@ -3932,32 +3932,26 @@
         <div class="lesson-block-title">Що таке статистика?</div>
     </div>
     <div class="lesson-block-content">
-        <p><strong>Статистика</strong> — це числовий показник, який вимірює <strong>кількість виробленого продукту</strong> за певний період.</p>
+        <p style="font-size: 15px;"><strong>Статистика</strong> — це цифра, яка показує <strong>скільки продукту ви виробили</strong>.</p>
         
-        <div style="margin-top: 14px; padding: 14px; background: #f0fdf4; border-radius: 10px; border-left: 4px solid #22c55e;">
-            <p style="margin: 0; font-weight: 600;">Ключова ідея:</p>
-            <p style="margin: 6px 0 0 0;">Статистика вимірює <strong>РЕЗУЛЬТАТ</strong>, а не процес. Не "скільки працював", а "скільки виробив".</p>
+        <div style="margin-top: 16px; padding: 16px; background: #f0fdf4; border-radius: 12px; border: 2px solid #22c55e;">
+            <p style="margin: 0; font-size: 15px;"><strong>Простими словами:</strong></p>
+            <p style="margin: 8px 0 0 0; font-size: 14px;">Не "скільки годин працював", а <strong>"скільки зробив"</strong>.</p>
         </div>
         
-        <div style="margin-top: 14px; background: #f9fafb; border-radius: 10px; padding: 14px;">
-            <p style="margin: 0 0 10px 0; font-weight: 600;">Приклади:</p>
-            <div style="display: grid; gap: 8px; font-size: 13px;">
-                <div style="display: flex; gap: 10px; padding: 8px; background: white; border-radius: 6px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 18px; height: 18px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span><strong>Продажі:</strong> кількість укладених договорів</span>
-                </div>
-                <div style="display: flex; gap: 10px; padding: 8px; background: white; border-radius: 6px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 18px; height: 18px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span><strong>Маркетинг:</strong> кількість заявок</span>
-                </div>
-                <div style="display: flex; gap: 10px; padding: 8px; background: white; border-radius: 6px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 18px; height: 18px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span><strong>Виробництво:</strong> кількість виконаних замовлень</span>
-                </div>
-                <div style="display: flex; gap: 10px; padding: 8px; background: white; border-radius: 6px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 18px; height: 18px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span><strong>Фінанси:</strong> виторг в гривнях</span>
-                </div>
+        <p style="margin-top: 16px; font-weight: 600;">Приклади статистик:</p>
+        <div style="margin-top: 10px; display: grid; gap: 8px;">
+            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px;">
+                <strong>Продажі:</strong> скільки договорів підписали
+            </div>
+            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px;">
+                <strong>Маркетинг:</strong> скільки заявок отримали
+            </div>
+            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px;">
+                <strong>Виробництво:</strong> скільки замовлень виконали
+            </div>
+            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px;">
+                <strong>Гроші:</strong> скільки грошей заробили
             </div>
         </div>
     </div>
@@ -3968,119 +3962,104 @@
         <div class="lesson-block-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
         </div>
-        <div class="lesson-block-title">Навіщо аналізувати дані щотижня?</div>
+        <div class="lesson-block-title">Навіщо рахувати цифри кожен тиждень?</div>
     </div>
     <div class="lesson-block-content">
-        <p style="margin-bottom: 12px;">Щотижневий аналіз статистик дозволяє:</p>
-        <div style="display: grid; gap: 8px;">
-            <div style="display: flex; gap: 10px; padding: 10px; background: #f0fdf4; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Бачити реальний стан</strong> бізнесу в цифрах, а не в відчуттях</span>
+        <div style="display: grid; gap: 10px;">
+            <div style="padding: 12px; background: #f0fdf4; border-radius: 8px; font-size: 14px;">
+                <strong>Бачите правду</strong> — не здогадки, а реальні цифри
             </div>
-            <div style="display: flex; gap: 10px; padding: 10px; background: #f0fdf4; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Виявляти проблеми</strong> на ранній стадії, поки вони не стали кризою</span>
+            <div style="padding: 12px; background: #f0fdf4; border-radius: 8px; font-size: 14px;">
+                <strong>Помічаєте проблеми рано</strong> — поки вони маленькі
             </div>
-            <div style="display: flex; gap: 10px; padding: 10px; background: #f0fdf4; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Приймати рішення</strong> на основі фактів, а не емоцій</span>
-            </div>
-            <div style="display: flex; gap: 10px; padding: 10px; background: #f0fdf4; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Контролювати команду</strong> за результатами, а не за присутністю</span>
+            <div style="padding: 12px; background: #f0fdf4; border-radius: 8px; font-size: 14px;">
+                <strong>Приймаєте рішення</strong> — на основі фактів, а не емоцій
             </div>
         </div>
         
-        <div style="margin-top: 14px; padding: 12px; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
-            <p style="margin: 0; font-size: 13px;"><strong>Правило:</strong> Без статистик власник керує "наосліп". Зі статистиками — бачить повну картину.</p>
+        <div style="margin-top: 16px; padding: 14px; background: #fef3c7; border-radius: 10px; border-left: 4px solid #f59e0b;">
+            <p style="margin: 0; font-size: 14px;"><strong>Без статистик</strong> — керуєте наосліп.<br><strong>Зі статистиками</strong> — бачите повну картину.</p>
         </div>
     </div>
 </div>
 
 <div class="lesson-block step">
     <div class="lesson-block-header">
-        <div class="lesson-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="lesson-block-icon" style="background: #dcfce7;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <div class="lesson-block-title">КРОК 1. Розробити статистики для вашого бізнесу</div>
+        <div class="lesson-block-title" style="color: #16a34a;">КРОК 1. Розробіть статистики</div>
     </div>
     <div class="lesson-block-content">
-        <p>AI-асистент допоможе визначити ключові показники для кожної функції вашої організації.</p>
+        <p style="font-size: 14px; margin-bottom: 12px;">AI-асистент задасть вам питання і допоможе визначити <strong>які цифри відстежувати</strong> саме у вашому бізнесі.</p>
         
-        <div style="margin-top: 14px; padding: 14px; background: #eff6ff; border-radius: 10px; border: 1px solid #bfdbfe;">
-            <div style="display: flex; gap: 10px; align-items: flex-start;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" style="width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                <div>
-                    <p style="margin: 0; font-weight: 600; color: #1e40af;">Підказка</p>
-                    <p style="margin: 6px 0 0 0; font-size: 13px; color: #1e40af;">Коли заходите в асистента, напишіть: <strong>"Які проблеми ти вирішуєш для мене?"</strong> — він пояснить свою мету.</p>
-                </div>
+        <a href="https://chatgpt.com/g/g-6851a70e282481918ad5c2894ff30b13-statistics" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 12px; text-decoration: none; color: white;">
+            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <div style="flex: 1;">
+                <p style="margin: 0; font-weight: 600; font-size: 15px;">Натисніть сюди</p>
+                <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">AI-асистент розробки статистик</p>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        
+        <div style="margin-top: 12px; padding: 12px; background: #eff6ff; border-radius: 8px; font-size: 13px;">
+            <strong>Підказка:</strong> Напишіть асистенту "Які проблеми ти вирішуєш?" — він пояснить що робить.
+        </div>
+    </div>
+</div>
+
+<div class="lesson-block step">
+    <div class="lesson-block-header">
+        <div class="lesson-block-icon" style="background: #faf5ff;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="lesson-block-title" style="color: #7c3aed;">КРОК 2. Отримайте доступ до платформи</div>
+    </div>
+    <div class="lesson-block-content">
+        <p style="font-size: 14px; margin-bottom: 12px;">Напишіть в бот підтримки і вкажіть:</p>
+        
+        <div style="padding: 14px; background: #faf5ff; border-radius: 10px; margin-bottom: 14px;">
+            <div style="display: grid; gap: 6px; font-size: 14px;">
+                <div><strong>1.</strong> Назву вашої організації</div>
+                <div><strong>2.</strong> Ваше ПІБ</div>
+                <div><strong>3.</strong> Номер телефону</div>
             </div>
         </div>
         
-        <a href="https://chatgpt.com/g/g-6851a70e282481918ad5c2894ff30b13-statistics" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 14px; margin-top: 14px; background: white; border-radius: 10px; border: 2px solid #22c55e; text-decoration: none; color: inherit;">
-            <div style="width: 44px; height: 44px; background: #f0fdf4; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 22px; height: 22px;"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        <a href="https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: white; border-radius: 12px; border: 2px solid #8b5cf6; text-decoration: none; color: inherit;">
+            <div style="width: 48px; height: 48px; background: #8b5cf6; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div style="flex: 1;">
-                <p style="margin: 0; font-weight: 600;">AI-асистент розробки статистик</p>
-                <p style="margin: 4px 0 0 0; font-size: 12px; color: #6b7280;">Визначить ключові показники для вашого бізнесу</p>
+                <p style="margin: 0; font-weight: 600; font-size: 15px;">Натисніть сюди</p>
+                <p style="margin: 4px 0 0 0; font-size: 13px; color: #6b7280;">Запросити доступ в Telegram</p>
             </div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="width: 20px; height: 20px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" style="width: 24px; height: 24px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
     </div>
 </div>
 
 <div class="lesson-block step">
     <div class="lesson-block-header">
-        <div class="lesson-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <div class="lesson-block-icon" style="background: #fef3c7;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
-        <div class="lesson-block-title">КРОК 2. Отримати доступ до платформи TALKO Statistics</div>
+        <div class="lesson-block-title" style="color: #d97706;">КРОК 3. Внесіть дані в платформу</div>
     </div>
     <div class="lesson-block-content">
-        <p>Після розробки статистик потрібно внести їх у спеціальну платформу для відстеження.</p>
+        <p style="font-size: 14px; margin-bottom: 12px;">Коли отримаєте доступ — зайдіть на платформу:</p>
         
-        <div style="margin-top: 14px; padding: 14px; background: #faf5ff; border-radius: 10px; border: 1px solid #e9d5ff;">
-            <p style="margin: 0; font-weight: 600; color: #7c3aed;">Як отримати доступ:</p>
-            <ol style="margin: 10px 0 0 0; padding-left: 20px; font-size: 13px;">
-                <li>Напишіть в бот підтримки (кнопка нижче)</li>
-                <li>Вкажіть: <strong>назву організації, ПІБ, номер телефону</strong></li>
-                <li>Вам нададуть доступ до платформи</li>
-            </ol>
-        </div>
-        
-        <a href="https://t.me/AlexEduPro_bot?start=68dcfbcd093bcfb4230b182e" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 14px; margin-top: 14px; background: white; border-radius: 10px; border: 2px solid #8b5cf6; text-decoration: none; color: inherit;">
-            <div style="width: 44px; height: 44px; background: #faf5ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" style="width: 22px; height: 22px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <a href="https://alextalko.com/kpi" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 12px; text-decoration: none; color: white;">
+            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
             </div>
             <div style="flex: 1;">
-                <p style="margin: 0; font-weight: 600;">Запросити доступ до платформи</p>
-                <p style="margin: 4px 0 0 0; font-size: 12px; color: #6b7280;">Telegram-бот підтримки</p>
+                <p style="margin: 0; font-weight: 600; font-size: 15px;">TALKO Statistics</p>
+                <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">alextalko.com/kpi</p>
             </div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" style="width: 20px; height: 20px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-    </div>
-</div>
-
-<div class="lesson-block step">
-    <div class="lesson-block-header">
-        <div class="lesson-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-        </div>
-        <div class="lesson-block-title">КРОК 3. Внести дані в платформу TALKO Statistics</div>
-    </div>
-    <div class="lesson-block-content">
-        <p>Після отримання доступу, дотримуйтесь алгоритму налаштування:</p>
-        
-        <a href="https://alextalko.com/kpi" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 14px; margin: 14px 0; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); border-radius: 10px; text-decoration: none; color: white;">
-            <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 22px; height: 22px;"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-            </div>
-            <div style="flex: 1;">
-                <p style="margin: 0; font-weight: 600;">TALKO Statistics</p>
-                <p style="margin: 4px 0 0 0; font-size: 12px; opacity: 0.9;">alextalko.com/kpi</p>
-            </div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 20px; height: 20px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
     </div>
 </div>
@@ -4088,35 +4067,35 @@
 <div class="lesson-block warning">
     <div class="lesson-block-header">
         <div class="lesson-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         </div>
-        <div class="lesson-block-title">Алгоритм налаштування статистик</div>
+        <div class="lesson-block-title">Як налаштувати платформу? (5 простих кроків)</div>
     </div>
     <div class="lesson-block-content">
-        <div style="display: grid; gap: 12px;">
-            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #8b5cf6;">
-                <p style="margin: 0; font-weight: 600; color: #7c3aed;">1. Визначити які дані потрібні</p>
-                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">5-8 показників на старті — ідеально. Більше = зламає дисципліну.</p>
+        <div style="display: grid; gap: 10px;">
+            <div style="padding: 14px; background: white; border-radius: 10px; border-left: 4px solid #22c55e;">
+                <p style="margin: 0; font-weight: 600; color: #16a34a;">1. Оберіть 5-8 показників</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Не більше! Інакше важко буде вести.</p>
             </div>
             
-            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #3b82f6;">
-                <p style="margin: 0; font-weight: 600; color: #1e40af;">2. Створити показники (колонки)</p>
-                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Назва + Відповідальний + Періодичність + Ціль</p>
+            <div style="padding: 14px; background: white; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                <p style="margin: 0; font-weight: 600; color: #1e40af;">2. Створіть показники</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Назва + Хто відповідає + Як часто + Ціль</p>
             </div>
             
-            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #22c55e;">
-                <p style="margin: 0; font-weight: 600; color: #16a34a;">3. Налаштувати команду (якщо є)</p>
-                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Кожен бачить тільки свої показники</p>
+            <div style="padding: 14px; background: white; border-radius: 10px; border-left: 4px solid #8b5cf6;">
+                <p style="margin: 0; font-weight: 600; color: #7c3aed;">3. Додайте команду (якщо є)</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Кожен бачитиме тільки свої цифри.</p>
             </div>
             
-            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #f59e0b;">
-                <p style="margin: 0; font-weight: 600; color: #d97706;">4. Вносити записи регулярно</p>
-                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">1 запис = 1 дата/період. Обов'язково з коментарями!</p>
+            <div style="padding: 14px; background: white; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                <p style="margin: 0; font-weight: 600; color: #d97706;">4. Вносьте дані регулярно</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Щодня або щотижня — як обрали. З коментарями!</p>
             </div>
             
-            <div style="padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #ef4444;">
+            <div style="padding: 14px; background: white; border-radius: 10px; border-left: 4px solid #ef4444;">
                 <p style="margin: 0; font-weight: 600; color: #dc2626;">5. AI-аналіз через 3-5 тижнів</p>
-                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Коли є достатньо даних — запустити аналіз</p>
+                <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7280;">Коли буде достатньо даних — запустіть.</p>
             </div>
         </div>
     </div>
@@ -4127,20 +4106,20 @@
         <div class="lesson-block-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
         </div>
-        <div class="lesson-block-title">AI-асистент підтримки платформи</div>
+        <div class="lesson-block-title">Потрібна допомога? Є AI-асистент!</div>
     </div>
     <div class="lesson-block-content">
-        <p>Якщо виникли питання по налаштуванню — скористайтесь AI-асистентом (фіолетова кнопка на платформі):</p>
+        <p style="font-size: 14px; margin-bottom: 12px;">На платформі є <strong>фіолетова кнопка</strong> — це AI-асистент, який допоможе налаштувати все правильно.</p>
         
-        <a href="https://chatgpt.com/g/g-693bf67a13e48191940632f9d6bedb63-talko-statistics-ai-support" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 14px; margin-top: 14px; background: white; border-radius: 10px; border: 2px solid #8b5cf6; text-decoration: none; color: inherit;">
-            <div style="width: 44px; height: 44px; background: #8b5cf6; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 22px; height: 22px;"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+        <a href="https://chatgpt.com/g/g-693bf67a13e48191940632f9d6bedb63-talko-statistics-ai-support" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 16px; background: #8b5cf6; border-radius: 12px; text-decoration: none; color: white;">
+            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
             </div>
             <div style="flex: 1;">
-                <p style="margin: 0; font-weight: 600;">AI-підтримка TALKO Statistics</p>
-                <p style="margin: 4px 0 0 0; font-size: 12px; color: #6b7280;">Допоможе налаштувати платформу та відповість на питання</p>
+                <p style="margin: 0; font-weight: 600; font-size: 15px;">AI-підтримка платформи</p>
+                <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">Відповість на будь-які питання</p>
             </div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" style="width: 20px; height: 20px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 24px; height: 24px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
     </div>
 </div>
@@ -4150,16 +4129,27 @@
         <div class="lesson-block-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         </div>
-        <div class="lesson-block-title">Домашнє завдання</div>
+        <div class="lesson-block-title">Що зробити?</div>
     </div>
     <div class="lesson-block-content">
-        <ol>
-            <li>Пройдіть AI-асистента розробки статистик</li>
-            <li>Запросіть доступ до платформи TALKO Statistics</li>
-            <li>Створіть 5-8 ключових показників</li>
-            <li>Внесіть перші дані за поточний тиждень</li>
-            <li>Вставте посилання на вашу налаштовану систему</li>
-        </ol>
+        <div style="display: grid; gap: 10px;">
+            <div style="display: flex; gap: 10px; align-items: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                <span style="background: #22c55e; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; flex-shrink: 0;">1</span>
+                <span style="font-size: 14px;">Пройдіть AI-асистента і отримайте список статистик</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                <span style="background: #8b5cf6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; flex-shrink: 0;">2</span>
+                <span style="font-size: 14px;">Запросіть доступ до платформи в Telegram</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                <span style="background: #f59e0b; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; flex-shrink: 0;">3</span>
+                <span style="font-size: 14px;">Внесіть 5-8 показників на платформу</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                <span style="background: #ef4444; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; flex-shrink: 0;">4</span>
+                <span style="font-size: 14px;">Заповніть перші дані за цей тиждень</span>
+            </div>
+        </div>
     </div>
 </div>
                 `,
