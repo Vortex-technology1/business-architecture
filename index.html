@@ -1464,6 +1464,7 @@
 
             <div class="content">
                 <div id="modules-list" class="modules-list"></div>
+                <div id="ai-assistants-list" class="modules-list hidden"></div>
             </div>
         </div>
 
@@ -1645,7 +1646,7 @@
                 subtitle: "Говоримо однією мовою",
                 subtitle_ru: "Говорим на одном языке",
                 
-                videoLink: null,
+                videoLink: "https://youtu.be/NsI4kEuT6Z8",
                 materialsLink: null,
                 
                 lessonContent: `
@@ -1978,7 +1979,7 @@
                 subtitle: "Як проходити урок: переглянути відео",
                 subtitle_ru: "Прочитайте инструкцию и выполните задание в AI-ассистенте",
                 
-                videoLink: "https://youtu.be/DY-Q9UU_g8g",
+                videoLink: "https://youtu.be/wroQPSBgAn0",
                 materialsLink: "https://drive.google.com/drive/folders/1BNSRJePCQG0UgcFC399GQcAInS44YZvJ?usp=sharing",
                 
                 lessonContent: `
@@ -5608,6 +5609,7 @@
                 switch (error.code) {
                     case 'auth/user-not-found':
                     case 'auth/wrong-password':
+                    case 'auth/invalid-credential':
                         errorMessage = t.errorWrongPassword;
                         break;
                     case 'auth/invalid-email':
@@ -5616,19 +5618,30 @@
                     case 'auth/too-many-requests':
                         errorMessage = t.errorTooManyRequests;
                         break;
+                    case 'auth/network-request-failed':
+                        errorMessage = currentLang === 'ua' ? 'Помилка мережі. Перевірте інтернет-з\'єднання.' : 'Ошибка сети. Проверьте интернет-соединение.';
+                        break;
                 }
                 
                 errorDiv.textContent = errorMessage;
                 errorDiv.classList.remove('hidden');
             } finally {
                 loginBtn.disabled = false;
-                loginBtn.textContent = t.loginBtn;
+                loginBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg><span>${t.loginBtn}</span>`;
             }
         });
 
         // Logout handler
         document.getElementById('logout-btn').addEventListener('click', async () => {
             try {
+                // Clear any pending save
+                if (saveTimeout) {
+                    clearTimeout(saveTimeout);
+                    saveTimeout = null;
+                }
+                isDataLoaded = false;
+                currentModule = null;
+                userProgress = {};
                 await signOut(auth);
             } catch (error) {
                 console.error('Logout error:', error);
@@ -5696,6 +5709,13 @@
                 if (userDoc.exists()) {
                     const userData = userDoc.data();
                     userProgress = userData.progress || {};
+                    // Ensure modules object exists
+                    if (!userProgress.modules) {
+                        userProgress.modules = {};
+                    }
+                    if (!userProgress.stats) {
+                        userProgress.stats = { totalTimeSpent: 0, completedModulesCount: 0, progressPercentage: 0 };
+                    }
                     
                     await updateDoc(userDocRef, {
                         'profile.lastLoginAt': serverTimestamp()
@@ -5735,13 +5755,20 @@
                 
                 const userDocRef = doc(db, 'users', currentUser.uid);
                 await updateDoc(userDocRef, {
-                    progress: userProgress
+                    progress: userProgress,
+                    'profile.lastActivityAt': serverTimestamp()
                 });
                 
                 hideSavingIndicator();
             } catch (error) {
                 console.error('Error saving user progress:', error);
                 hideSavingIndicator();
+                
+                // Show error to user only for critical failures
+                if (error.code === 'permission-denied') {
+                    const msg = currentLang === 'ua' ? 'Помилка збереження. Немає доступу.' : 'Ошибка сохранения. Нет доступа.';
+                    console.warn(msg);
+                }
             }
         }
 
@@ -5952,7 +5979,7 @@
                     ${module.homeworkLink ? `
                     <div style="margin-top: 1.5rem;">
                         <div style="padding: 12px 16px; background: #f0fdf4; border-radius: 10px; border-left: 3px solid #22c55e; margin-bottom: 12px; font-size: 13px;">
-                            <p style="margin: 0; color: #166534;"><strong>${isRu ? 'Підказка:' : 'Підказка:'}</strong> ${isRu ? 'Напишіть асистенту "Яка твоя мета?" — він пояснить для чого він потрібен і як з ним працювати' : 'Напишіть асистенту "Яка твоя мета?" — він пояснить для чого він потрібен і як з ним працювати'}</p>
+                            <p style="margin: 0; color: #166534;"><strong>${isRu ? 'Подсказка:' : 'Підказка:'}</strong> ${isRu ? 'Напишите ассистенту "Какая твоя цель?" — он объяснит для чего он нужен и как с ним работать' : 'Напишіть асистенту "Яка твоя мета?" — він пояснить для чого він потрібен і як з ним працювати'}</p>
                         </div>
                         <a href="${module.homeworkLink}" target="_blank" class="homework-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
@@ -6009,6 +6036,8 @@
 
         // Update homework status
         function updateHomeworkStatus() {
+            if (!currentModule) return;
+            
             const textarea = document.getElementById('homework-textarea');
             const statusSpan = document.getElementById('homework-status');
             const submitBtn = document.getElementById('submit-btn');
@@ -6063,6 +6092,8 @@
 
         // Submit homework
         window.submitHomework = function() {
+            if (!currentModule) return;
+            
             const textarea = document.getElementById('homework-textarea');
             const homeworkText = textarea.value.trim();
             const t = translations;
@@ -6128,7 +6159,10 @@
         window.cancelHomework = function() {
             if (!currentModule || !currentModule.completed) return;
             
-            if (!confirm('Ви впевнені, що хочете скасувати завершення уроку?')) return;
+            const confirmMsg = currentLang === 'ua' 
+                ? 'Ви впевнені, що хочете скасувати завершення уроку?' 
+                : 'Вы уверены, что хотите отменить завершение урока?';
+            if (!confirm(confirmMsg)) return;
             
             currentModule.completed = false;
             currentModule.completedAt = null;
@@ -6150,6 +6184,86 @@
         // Initialize app
         function init() {
             updateLanguage();
+            initTabs();
+        }
+
+        // Tab switching functionality
+        function initTabs() {
+            const modulesTab = document.getElementById('modules-tab');
+            const aiTab = document.getElementById('ai-tab');
+            const modulesList = document.getElementById('modules-list');
+            const aiList = document.getElementById('ai-assistants-list');
+            
+            modulesTab.addEventListener('click', () => {
+                modulesTab.classList.add('active');
+                aiTab.classList.remove('active');
+                modulesList.classList.remove('hidden');
+                aiList.classList.add('hidden');
+            });
+            
+            aiTab.addEventListener('click', () => {
+                aiTab.classList.add('active');
+                modulesTab.classList.remove('active');
+                aiList.classList.remove('hidden');
+                modulesList.classList.add('hidden');
+                renderAIAssistants();
+            });
+        }
+
+        // Render AI Assistants list
+        function renderAIAssistants() {
+            const aiList = document.getElementById('ai-assistants-list');
+            const isRu = currentLang === 'ru';
+            
+            // Extract unique AI assistants from courseData
+            const assistants = [];
+            const seenLinks = new Set();
+            
+            courseData.forEach(module => {
+                if (module.homeworkLink && !seenLinks.has(module.homeworkLink)) {
+                    seenLinks.add(module.homeworkLink);
+                    const name = isRu && module.homeworkLinkName_ru ? module.homeworkLinkName_ru : module.homeworkLinkName;
+                    const title = isRu && module.title_ru ? module.title_ru : module.title;
+                    assistants.push({
+                        name: name ? name.replace('→ ', '') : 'AI Асистент',
+                        link: module.homeworkLink,
+                        moduleTitle: title,
+                        moduleId: module.id
+                    });
+                }
+            });
+            
+            const headerText = isRu ? 'Все AI-ассистенты курса' : 'Усі AI-асистенти курсу';
+            const openText = isRu ? 'Открыть' : 'Відкрити';
+            const fromModuleText = isRu ? 'Из урока' : 'З уроку';
+            
+            aiList.innerHTML = `
+                <div style="margin-bottom: 16px;">
+                    <h2 style="font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">${headerText}</h2>
+                    <p style="color: var(--text-secondary); font-size: 14px;">${isRu ? 'Быстрый доступ ко всем асистентам' : 'Швидкий доступ до всіх асистентів'}</p>
+                </div>
+                ${assistants.map((a, idx) => `
+                    <div class="module-card" style="cursor: default;">
+                        <div class="module-content">
+                            <div class="module-left">
+                                <div class="module-icon available">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="3"/><path d="M12 8v3"/></svg>
+                                </div>
+                                <div class="module-info">
+                                    <h3 class="module-title">${a.name}</h3>
+                                    <p class="module-subtitle">${fromModuleText} ${a.moduleId}: ${a.moduleTitle}</p>
+                                </div>
+                            </div>
+                            <div class="module-right">
+                                <a href="${a.link}" target="_blank" class="module-btn" style="text-decoration: none;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    ${openText}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            `;
         }
 
         // How to learn popup for RU version - make global for onclick
