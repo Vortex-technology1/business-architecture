@@ -6191,8 +6191,14 @@
             // NEW FORMAT - with videoLink and lessonContent
             if (lessonContentText) {
                 lessonContent.innerHTML = `
-                    ${!isRu && (module.videoLink || module.materialsLink) ? `
+                    ${!isRu && (module.videoLink || module.materialsLink || module.id === 10) ? `
                         <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                            ${module.id === 10 ? `
+                            <a href="https://youtu.be/VV-nww57TT4" target="_blank" class="homework-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                Що буде в уроці
+                            </a>
+                            ` : ''}
                             ${module.videoLink ? `
                             <a href="${module.videoLink}" target="_blank" class="homework-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
