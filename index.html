@@ -6192,7 +6192,7 @@
             if (lessonContentText) {
                 lessonContent.innerHTML = `
                     ${!isRu && (module.videoLink || module.materialsLink) ? `
-                        <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
                             ${module.videoLink ? `
                             <a href="${module.videoLink}" target="_blank" class="homework-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -6204,6 +6204,9 @@
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                     ${t.downloadMaterials}
                                 </a>
+                            ` : ''}
+                            ${!module.videoLink && module.materialsLink ? `
+                                <span style="font-size: 13px; color: #64748b;">← Ці матеріали розглянете пізніше. Спочатку перегляньте відео нижче.</span>
                             ` : ''}
                         </div>
                     ` : ''}
